@@ -1,0 +1,12 @@
+﻿global using ASP.NET_API_Template.API.Helper;
+global using ASP.NET_API_Template.API.Middleware;
+global using ASP.NET_API_Template.API.Startup;
+global using ASP.NET_API_Template.Core.DTOs;
+global using ASP.NET_API_Template.Core.Interfaces;
+global using ASP.NET_API_Template.Core.Mapping;
+global using ASP.NET_API_Template.Core.Models.Response;
+global using ASP.NET_API_Template.EF.Helper;
+global using Microsoft.AspNetCore.Mvc;
+global using Scalar.AspNetCore;
+global using System.Net;
+global using System.Text.Json.Serialization;

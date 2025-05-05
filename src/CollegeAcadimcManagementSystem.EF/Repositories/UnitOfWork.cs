@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace ASP.NET_API_Template.EF.Repositories;
+namespace CollegeAcadimcManagementSystem.EF.Repositories;
 
 public class UnitOfWork : IUnitOfWork
 {

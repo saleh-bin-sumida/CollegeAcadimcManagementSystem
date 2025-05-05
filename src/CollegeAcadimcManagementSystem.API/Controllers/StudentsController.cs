@@ -1,4 +1,4 @@
-﻿namespace ASP.NET_API_Template.API.Controllers;
+﻿namespace CollegeAcadimcManagementSystem.API.Controllers;
 
 [ApiController]
 public class StudentsController(IUnitOfWork _unitOfWork, ILogger<StudentsController> _logger) : ControllerBase

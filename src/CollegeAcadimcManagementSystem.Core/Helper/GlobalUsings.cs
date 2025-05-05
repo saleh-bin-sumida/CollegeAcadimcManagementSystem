@@ -1,7 +1,7 @@
-﻿global using ASP.NET_API_Template.Core.DTOs;
-global using ASP.NET_API_Template.Core.Entites;
-global using ASP.NET_API_Template.Core.Interfaces;
-global using ASP.NET_API_Template.Core.Models.Response;
+﻿global using CollegeAcadimcManagementSystem.Core.DTOs;
+global using CollegeAcadimcManagementSystem.Core.Entites;
+global using CollegeAcadimcManagementSystem.Core.Interfaces;
+global using CollegeAcadimcManagementSystem.Core.Models.Response;
 global using Microsoft.Extensions.DependencyInjection;
 global using System.ComponentModel.DataAnnotations;
 global using System.Linq.Expressions;

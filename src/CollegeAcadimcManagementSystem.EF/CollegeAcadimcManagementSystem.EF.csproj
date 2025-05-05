@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <RootNamespace>ASP.NET_API_Template.EF</RootNamespace>
+    <RootNamespace>CollegeAcadimcManagementSystem.EF</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ASP.NET-API-Template.Core\ASP.NET-API-Template.Core.csproj" />
+    <ProjectReference Include="..\CollegeAcadimcManagementSystem.Core\CollegeAcadimcManagementSystem.Core.csproj" />
   </ItemGroup>
 
 </Project>

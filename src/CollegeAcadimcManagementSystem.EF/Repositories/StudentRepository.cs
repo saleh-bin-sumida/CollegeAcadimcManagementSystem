@@ -1,8 +1,8 @@
-﻿using ASP.NET_API_Template.Core.DTOs;
+﻿using CollegeAcadimcManagementSystem.Core.DTOs;
 using Mapster;
 using Microsoft.Extensions.Logging;
 
-namespace ASP.NET_API_Template.EF.Repositories;
+namespace CollegeAcadimcManagementSystem.EF.Repositories;
 
 public class StudentRepository : BaseRepository<Student>, IStudentRepository
 {

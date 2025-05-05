@@ -1,6 +1,6 @@
 ﻿using Mapster;
 
-namespace ASP.NET_API_Template.Core.Mapping
+namespace CollegeAcadimcManagementSystem.Core.Mapping
 {
     public static class MappingConfig
     {

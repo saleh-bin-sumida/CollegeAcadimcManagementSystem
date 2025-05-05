@@ -1,4 +1,4 @@
-﻿namespace ASP.NET_API_Template.Core.DTOs;
+﻿namespace CollegeAcadimcManagementSystem.Core.DTOs;
 
 public class StudentDto
 {

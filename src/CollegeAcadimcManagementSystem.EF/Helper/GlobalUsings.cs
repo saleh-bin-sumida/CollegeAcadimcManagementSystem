@@ -1,10 +1,10 @@
-﻿global using ASP.NET_API_Template.Core.Constants;
-global using ASP.NET_API_Template.Core.Entites;
-global using ASP.NET_API_Template.Core.Interfaces;
-global using ASP.NET_API_Template.Core.Models.Response;
-global using ASP.NET_API_Template.EF.Data;
-global using ASP.NET_API_Template.EF.Data.Seading;
-global using ASP.NET_API_Template.EF.Repositories;
+﻿global using CollegeAcadimcManagementSystem.Core.Constants;
+global using CollegeAcadimcManagementSystem.Core.Entites;
+global using CollegeAcadimcManagementSystem.Core.Interfaces;
+global using CollegeAcadimcManagementSystem.Core.Models.Response;
+global using CollegeAcadimcManagementSystem.EF.Data;
+global using CollegeAcadimcManagementSystem.EF.Data.Seading;
+global using CollegeAcadimcManagementSystem.EF.Repositories;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Microsoft.Extensions.Configuration;

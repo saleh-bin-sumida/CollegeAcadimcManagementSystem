@@ -1,4 +1,4 @@
-﻿namespace ASP.NET_API_Template.API.Startup;
+﻿namespace CollegeAcadimcManagementSystem.API.Startup;
 
 public static class ControllersConfig
 {

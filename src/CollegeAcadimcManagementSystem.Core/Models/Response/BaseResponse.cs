@@ -1,4 +1,4 @@
-﻿namespace ASP.NET_API_Template.Core.Models.Response;
+﻿namespace CollegeAcadimcManagementSystem.Core.Models.Response;
 public class BaseResponse<T>
 {
     public bool Success { get; set; }

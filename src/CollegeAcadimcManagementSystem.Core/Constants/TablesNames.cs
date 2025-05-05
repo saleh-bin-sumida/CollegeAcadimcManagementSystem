@@ -1,4 +1,4 @@
-﻿namespace ASP.NET_API_Template.Core.Constants;
+﻿namespace CollegeAcadimcManagementSystem.Core.Constants;
 
 public static class TablesNames
 {

@@ -1,4 +1,4 @@
-﻿namespace ASP.NET_API_Template.EF.Extensions;
+﻿namespace CollegeAcadimcManagementSystem.EF.Extensions;
 
 public static class ExpressionExtensions
 {

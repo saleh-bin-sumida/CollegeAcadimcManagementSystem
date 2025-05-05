@@ -1,4 +1,4 @@
-﻿namespace ASP.NET_API_Template.EF.Helper;
+﻿namespace CollegeAcadimcManagementSystem.EF.Helper;
 
 public static class EFServices
 {

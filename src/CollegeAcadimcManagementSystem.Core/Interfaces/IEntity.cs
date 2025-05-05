@@ -1,4 +1,4 @@
-﻿namespace ASP.NET_API_Template.Core.Interfaces;
+﻿namespace CollegeAcadimcManagementSystem.Core.Interfaces;
 
 public interface IEntity
 {

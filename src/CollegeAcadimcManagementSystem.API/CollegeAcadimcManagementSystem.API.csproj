@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>ASP.NET_API_Template.API</RootNamespace>
+    <RootNamespace>CollegeAcadimcManagementSystem.API</RootNamespace>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
@@ -24,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ASP.NET-API-Template.Core\ASP.NET-API-Template.Core.csproj" />
-    <ProjectReference Include="..\ASP.NET-API-Template.EF\ASP.NET-API-Template.EF.csproj" />
+    <ProjectReference Include="..\CollegeAcadimcManagementSystem.Core\CollegeAcadimcManagementSystem.Core.csproj" />
+    <ProjectReference Include="..\CollegeAcadimcManagementSystem.EF\CollegeAcadimcManagementSystem.EF.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace ASP.NET_API_Template.EF.Data.Configuration;
+﻿namespace CollegeAcadimcManagementSystem.EF.Data.Configuration;
 
 internal class StudentConfiguration : IEntityTypeConfiguration<Student>
 {

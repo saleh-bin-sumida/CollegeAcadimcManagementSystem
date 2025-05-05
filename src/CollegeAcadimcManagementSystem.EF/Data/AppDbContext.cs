@@ -1,6 +1,6 @@
-﻿using ASP.NET_API_Template.EF.Data.Configuration;
+﻿using CollegeAcadimcManagementSystem.EF.Data.Configuration;
 
-namespace ASP.NET_API_Template.EF.Data;
+namespace CollegeAcadimcManagementSystem.EF.Data;
 
 public class AppDbContext : DbContext
 {

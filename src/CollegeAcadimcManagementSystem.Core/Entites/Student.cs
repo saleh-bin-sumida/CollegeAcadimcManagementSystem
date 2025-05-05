@@ -1,4 +1,4 @@
-﻿namespace ASP.NET_API_Template.Core.Entites;
+﻿namespace CollegeAcadimcManagementSystem.Core.Entites;
 
 
 public class Student : IEntity, ISoftDeletable

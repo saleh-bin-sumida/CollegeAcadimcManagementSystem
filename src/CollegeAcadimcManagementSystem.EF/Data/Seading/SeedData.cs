@@ -1,4 +1,4 @@
-﻿namespace ASP.NET_API_Template.EF.Data.Seading;
+﻿namespace CollegeAcadimcManagementSystem.EF.Data.Seading;
 
 public static class SeedData
 {

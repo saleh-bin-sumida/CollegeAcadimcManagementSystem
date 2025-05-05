@@ -1,4 +1,4 @@
-﻿namespace ASP.NET_API_Template.API.Helper;
+﻿namespace CollegeAcadimcManagementSystem.API.Helper;
 public static class SystemApiRouts
 {
     public static class Students

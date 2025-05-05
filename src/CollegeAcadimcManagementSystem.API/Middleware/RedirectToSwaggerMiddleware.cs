@@ -1,4 +1,4 @@
-namespace ASP.NET_API_Template.API.Middleware;
+namespace CollegeAcadimcManagementSystem.API.Middleware;
 
 public class RedirectToSwaggerMiddleware
 {

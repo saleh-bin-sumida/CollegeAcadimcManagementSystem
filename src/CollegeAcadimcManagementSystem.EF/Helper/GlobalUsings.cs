@@ -1,12 +1,15 @@
 ﻿global using CollegeAcadimcManagementSystem.Core.Constants;
+global using CollegeAcadimcManagementSystem.Core.DTOs;
 global using CollegeAcadimcManagementSystem.Core.Entites;
 global using CollegeAcadimcManagementSystem.Core.Interfaces;
 global using CollegeAcadimcManagementSystem.Core.Models.Response;
 global using CollegeAcadimcManagementSystem.EF.Data;
 global using CollegeAcadimcManagementSystem.EF.Data.Seading;
 global using CollegeAcadimcManagementSystem.EF.Repositories;
+global using Mapster;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Logging;
 global using System.Linq.Expressions;

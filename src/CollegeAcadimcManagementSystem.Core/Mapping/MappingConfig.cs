@@ -9,8 +9,10 @@ namespace CollegeAcadimcManagementSystem.Core.Mapping
             TypeAdapterConfig<Student, StudentDto>.NewConfig()
                 .Map(dest => dest.FullName, src => src.FirstName + " " + src.LastName);
 
+            TypeAdapterConfig<Instructor, InstructorDto>.NewConfig()
+                .Map(dest => dest.FullName, src => src.FirstName + " " + src.LastName);
 
-
+            TypeAdapterConfig<Department, DepartmentDto>.NewConfig();
         }
     }
 }

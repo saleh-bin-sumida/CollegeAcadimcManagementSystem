@@ -7,18 +7,6 @@ public class StudentsController(IUnitOfWork _unitOfWork, ILogger<StudentsControl
 
     #region Get Methods
 
-    /// <summary>
-    /// الحصول على جميع الطلاب
-    /// </summary>
-    /// <param name="pageNumber">رقم الصفحة</param>
-    /// <param name="pageSize">حجم الصفحة</param>
-    /// <param name="searchTerm">نص البحث, اختياري</param>
-    /// <remarks>
-    /// سيتم جلب الطلاب الذين تحتوي اسماءهم او اي حقل من حقولهم عل النص البحثي في حالة ارفاقه ومن النوع المحدد
-    /// <br/>
-    /// في حالة لم يتم تحديد نص بحثي او نوع الطالب سيم الجلب حسب الصفحات    
-    /// </remarks>
-    /// <returns>قائمة الطلاب</returns>
     [HttpGet(SystemApiRouts.Students.GetAll)]
     [ProducesResponseType(typeof(BaseResponse<PagedResult<StudentDto>>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAllStudents(
@@ -31,11 +19,7 @@ public class StudentsController(IUnitOfWork _unitOfWork, ILogger<StudentsControl
     }
 
 
-    /// <summary>
-    /// الحصول على طالب بواسطة المعرف
-    /// </summary>
-    /// <param name="id">معرف الطالب</param>
-    /// <returns>تفاصيل الطالب</returns>
+
     [HttpGet(SystemApiRouts.Students.GetById)]
     [ProducesResponseType(typeof(BaseResponse<StudentDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResponse<StudentDto>), StatusCodes.Status404NotFound)]
@@ -50,10 +34,7 @@ public class StudentsController(IUnitOfWork _unitOfWork, ILogger<StudentsControl
         return Ok(response);
     }
 
-    /// <summary>
-    /// إنشاء طالب جديد
-    /// </summary>
-    /// </remarks>
+
     [HttpPost(SystemApiRouts.Students.Add)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status400BadRequest)]
@@ -74,10 +55,6 @@ public class StudentsController(IUnitOfWork _unitOfWork, ILogger<StudentsControl
 
     #region Put Methods
 
-    /// <summary>
-    /// تحديث طالب موجود
-    /// </summary>
-    /// <returns>لا يوجد محتوى</returns>
     [HttpPut(SystemApiRouts.Students.Update)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status400BadRequest)]
@@ -97,11 +74,6 @@ public class StudentsController(IUnitOfWork _unitOfWork, ILogger<StudentsControl
 
     #region Delete Methods
 
-    /// <summary>
-    /// حذف طالب
-    /// </summary>
-    /// <param name="id">معرف الطالب</param>
-    /// <returns>لا يوجد محتوى</returns>
     [HttpDelete(SystemApiRouts.Students.Delete)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status400BadRequest)]

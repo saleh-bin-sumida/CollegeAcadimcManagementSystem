@@ -1,8 +1,4 @@
-﻿using CollegeAcadimcManagementSystem.Core.DTOs;
-using Mapster;
-using Microsoft.Extensions.Logging;
-
-namespace CollegeAcadimcManagementSystem.EF.Repositories;
+﻿namespace CollegeAcadimcManagementSystem.EF.Repositories;
 
 public class StudentRepository : BaseRepository<Student>, IStudentRepository
 {

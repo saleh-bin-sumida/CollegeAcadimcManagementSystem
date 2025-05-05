@@ -7,6 +7,8 @@ public class AppDbContext : DbContext
     #region DbSets
 
     public DbSet<Student> Students { get; set; }
+    public DbSet<Instructor> Instructors { get; set; }
+    public DbSet<Department> Departments { get; set; } // Added Departments DbSet
 
     #endregion
 

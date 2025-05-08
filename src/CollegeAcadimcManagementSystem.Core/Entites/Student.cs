@@ -12,4 +12,5 @@ public class Student : IEntity, ISoftDeletable
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
     public DateTime? ModifiedDate { get; set; }
     public DateTime? DeletedDate { get; set; }
+    public ICollection<StudentEnrollment> StudentEnrollments { get; set; } = new List<StudentEnrollment>();
 }

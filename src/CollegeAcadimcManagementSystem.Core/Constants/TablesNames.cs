@@ -10,4 +10,5 @@ public static class TablesNames
     public const string DepartmentStudyLevels = "DepartmentStudyLevels";
     public const string DepStudyLevelCourses = "DepartmentStudyLevelCourses";
     public const string DepStudyLevelCourseInstructors = "DepStudyLevelCourseInstructors";
+    public const string StudentEnrollments = "StudentEnrollments";
 }

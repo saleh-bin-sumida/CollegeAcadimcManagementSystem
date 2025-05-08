@@ -1,5 +1,4 @@
-﻿
-namespace CollegeAcadimcManagementSystem.Core.Constants;
+﻿namespace CollegeAcadimcManagementSystem.Core.Constants;
 
 public static class TablesNames
 {
@@ -9,6 +8,6 @@ public static class TablesNames
     public const string StudyLevels = "StudyLevels";
     public const string Courses = "Courses";
     public const string DepartmentStudyLevels = "DepartmentStudyLevels";
-    public const string DepartmentStudyLevelCourses = "DepartmentStudyLevelCourses";
-
+    public const string DepStudyLevelCourses = "DepartmentStudyLevelCourses";
+    public const string DepStudyLevelCourseInstructors = "DepStudyLevelCourseInstructors";
 }

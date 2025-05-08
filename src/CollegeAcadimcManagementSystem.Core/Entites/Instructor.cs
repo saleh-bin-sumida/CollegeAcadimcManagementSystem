@@ -11,4 +11,8 @@ public class Instructor : IEntity, ISoftDeletable
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
     public DateTime? ModifiedDate { get; set; }
     public DateTime? DeletedDate { get; set; }
+
+
+    public ICollection<DepStudyLevelCourseInstructor> DepStudyLevelCourseInstructors = [];
+
 }

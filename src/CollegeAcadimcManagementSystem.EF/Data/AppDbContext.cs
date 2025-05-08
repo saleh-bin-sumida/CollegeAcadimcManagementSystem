@@ -12,6 +12,7 @@ public class AppDbContext : DbContext
     public DbSet<StudyLevel> StudyLevels { get; set; }
     public DbSet<DepartmentStudyLevel> DepartmentStudyLevels { get; set; }
     public DbSet<DepartmentStudyLevelCourse> DepartmentStudyLevelCourses { get; set; }
+    public DbSet<DepStudyLevelCourseInstructor> DepStudyLevelCourseInstructors { get; set; }
     public DbSet<Course> Courses { get; set; }
 
     #endregion

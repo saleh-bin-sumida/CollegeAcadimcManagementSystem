@@ -531,6 +531,7 @@ public static class SeedData
             new Course { Id = 10, Title = "Literature 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false }
         };
     }
+
     public static List<DepartmentStudyLevelCourse> SeedDepartmentStudyLevelCourses()
     {
         return new List<DepartmentStudyLevelCourse>
@@ -548,13 +549,32 @@ public static class SeedData
         };
     }
 
-    //public static List<DepartmentStudyLevelCourse> SeedCourseDepartmentStudyLevels()
-    //{
-    //    return new List<DepartmentStudyLevelCourse>
-    //    {
-    //        new DepartmentStudyLevelCourse { CourseId = 1,DepartmentStudyLevelId = 1 },
-    //        new DepartmentStudyLevelCourse { CourseId = 2,DepartmentStudyLevelId = 1 },
-    //        new DepartmentStudyLevelCourse { CourseId = 2, DepartmentStudyLevelId = 2 }
-    //    };
-    //}
+
+    public static List<DepStudyLevelCourseInstructor> SeedDepStudyLevelCourseInstructors()
+    {
+        return new List<DepStudyLevelCourseInstructor>
+        {
+            new DepStudyLevelCourseInstructor { Id = 1, InstructorId = 1, DepStudyLevelCourseId = 1 },
+            new DepStudyLevelCourseInstructor { Id = 2, InstructorId = 2, DepStudyLevelCourseId = 2 },
+            new DepStudyLevelCourseInstructor { Id = 3, InstructorId = 3, DepStudyLevelCourseId = 3 },
+            new DepStudyLevelCourseInstructor { Id = 4, InstructorId = 4, DepStudyLevelCourseId = 4 },
+            new DepStudyLevelCourseInstructor { Id = 5, InstructorId = 5, DepStudyLevelCourseId = 5 },
+            new DepStudyLevelCourseInstructor { Id = 6, InstructorId = 6, DepStudyLevelCourseId = 6 },
+            new DepStudyLevelCourseInstructor { Id = 7, InstructorId = 7, DepStudyLevelCourseId = 7 },
+            new DepStudyLevelCourseInstructor { Id = 8, InstructorId = 8, DepStudyLevelCourseId = 8 },
+            new DepStudyLevelCourseInstructor { Id = 9, InstructorId = 9, DepStudyLevelCourseId = 9 },
+            new DepStudyLevelCourseInstructor { Id = 10, InstructorId = 10, DepStudyLevelCourseId = 10 },
+            new DepStudyLevelCourseInstructor { Id = 11, InstructorId = 11, DepStudyLevelCourseId = 1 },
+            new DepStudyLevelCourseInstructor { Id = 12, InstructorId = 12, DepStudyLevelCourseId = 2 },
+            new DepStudyLevelCourseInstructor { Id = 13, InstructorId = 13, DepStudyLevelCourseId = 3 },
+            new DepStudyLevelCourseInstructor { Id = 14, InstructorId = 14, DepStudyLevelCourseId = 4 },
+            new DepStudyLevelCourseInstructor { Id = 15, InstructorId = 15, DepStudyLevelCourseId = 5 },
+            new DepStudyLevelCourseInstructor { Id = 16, InstructorId = 16, DepStudyLevelCourseId = 6 },
+            new DepStudyLevelCourseInstructor { Id = 17, InstructorId = 17, DepStudyLevelCourseId = 7 },
+            new DepStudyLevelCourseInstructor { Id = 18, InstructorId = 18, DepStudyLevelCourseId = 8 },
+            new DepStudyLevelCourseInstructor { Id = 19, InstructorId = 19, DepStudyLevelCourseId = 9 },
+            new DepStudyLevelCourseInstructor { Id = 20, InstructorId = 20, DepStudyLevelCourseId = 10 }
+        };
+    }
+
 }

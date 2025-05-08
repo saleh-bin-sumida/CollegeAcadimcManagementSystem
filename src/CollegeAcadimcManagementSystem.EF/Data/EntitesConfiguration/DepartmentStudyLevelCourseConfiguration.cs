@@ -4,7 +4,7 @@ internal class DepartmentStudyLevelCourseConfiguration : IEntityTypeConfiguratio
 {
     public void Configure(EntityTypeBuilder<DepartmentStudyLevelCourse> builder)
     {
-        builder.ToTable(TablesNames.DepartmentStudyLevelCourses);
+        builder.ToTable(TablesNames.DepStudyLevelCourses);
 
         builder.HasKey(cdsl => cdsl.Id);
 

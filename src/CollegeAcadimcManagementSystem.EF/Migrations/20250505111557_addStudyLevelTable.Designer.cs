@@ -4,6 +4,7 @@ using CollegeAcadimcManagementSystem.EF.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CollegeAcadimcManagementSystem.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250505111557_addStudyLevelTable")]
+    partial class addStudyLevelTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -80,83 +83,6 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                             Description = "Department of Physics",
                             IsDeleted = false,
                             Name = "Physics"
-                        });
-                });
-
-            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.DepartmentStudyLevel", b =>
-                {
-                    b.Property<int>("DepartmentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudyLevelId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DepartmentId", "StudyLevelId");
-
-                    b.HasIndex("StudyLevelId");
-
-                    b.ToTable("DepartmentStudyLevels", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            DepartmentId = 1,
-                            StudyLevelId = 1
-                        },
-                        new
-                        {
-                            DepartmentId = 1,
-                            StudyLevelId = 2
-                        },
-                        new
-                        {
-                            DepartmentId = 1,
-                            StudyLevelId = 3
-                        },
-                        new
-                        {
-                            DepartmentId = 1,
-                            StudyLevelId = 4
-                        },
-                        new
-                        {
-                            DepartmentId = 1,
-                            StudyLevelId = 5
-                        },
-                        new
-                        {
-                            DepartmentId = 1,
-                            StudyLevelId = 6
-                        },
-                        new
-                        {
-                            DepartmentId = 2,
-                            StudyLevelId = 1
-                        },
-                        new
-                        {
-                            DepartmentId = 2,
-                            StudyLevelId = 2
-                        },
-                        new
-                        {
-                            DepartmentId = 2,
-                            StudyLevelId = 3
-                        },
-                        new
-                        {
-                            DepartmentId = 3,
-                            StudyLevelId = 4
-                        },
-                        new
-                        {
-                            DepartmentId = 3,
-                            StudyLevelId = 5
-                        },
-                        new
-                        {
-                            DepartmentId = 3,
-                            StudyLevelId = 6
                         });
                 });
 
@@ -697,64 +623,7 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                             CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Name = "Level 2"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Name = "Level 3"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Name = "Level 4"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Name = "Level 5"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Name = "Level 6"
                         });
-                });
-
-            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.DepartmentStudyLevel", b =>
-                {
-                    b.HasOne("CollegeAcadimcManagementSystem.Core.Entites.Department", "Department")
-                        .WithMany("DepartmentStudyLevels")
-                        .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CollegeAcadimcManagementSystem.Core.Entites.StudyLevel", "StudyLevel")
-                        .WithMany("DepartmentStudyLevels")
-                        .HasForeignKey("StudyLevelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Department");
-
-                    b.Navigation("StudyLevel");
-                });
-
-            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.Department", b =>
-                {
-                    b.Navigation("DepartmentStudyLevels");
-                });
-
-            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.StudyLevel", b =>
-                {
-                    b.Navigation("DepartmentStudyLevels");
                 });
 #pragma warning restore 612, 618
         }

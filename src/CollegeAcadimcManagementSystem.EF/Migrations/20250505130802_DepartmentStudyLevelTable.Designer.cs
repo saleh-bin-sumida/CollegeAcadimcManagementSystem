@@ -4,6 +4,7 @@ using CollegeAcadimcManagementSystem.EF.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CollegeAcadimcManagementSystem.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250505130802_DepartmentStudyLevelTable")]
+    partial class DepartmentStudyLevelTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,53 +113,13 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                         },
                         new
                         {
-                            DepartmentId = 1,
-                            StudyLevelId = 3
-                        },
-                        new
-                        {
-                            DepartmentId = 1,
-                            StudyLevelId = 4
-                        },
-                        new
-                        {
-                            DepartmentId = 1,
-                            StudyLevelId = 5
-                        },
-                        new
-                        {
-                            DepartmentId = 1,
-                            StudyLevelId = 6
-                        },
-                        new
-                        {
                             DepartmentId = 2,
                             StudyLevelId = 1
                         },
                         new
                         {
-                            DepartmentId = 2,
+                            DepartmentId = 3,
                             StudyLevelId = 2
-                        },
-                        new
-                        {
-                            DepartmentId = 2,
-                            StudyLevelId = 3
-                        },
-                        new
-                        {
-                            DepartmentId = 3,
-                            StudyLevelId = 4
-                        },
-                        new
-                        {
-                            DepartmentId = 3,
-                            StudyLevelId = 5
-                        },
-                        new
-                        {
-                            DepartmentId = 3,
-                            StudyLevelId = 6
                         });
                 });
 
@@ -697,34 +660,6 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                             CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Name = "Level 2"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Name = "Level 3"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Name = "Level 4"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Name = "Level 5"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Name = "Level 6"
                         });
                 });
 

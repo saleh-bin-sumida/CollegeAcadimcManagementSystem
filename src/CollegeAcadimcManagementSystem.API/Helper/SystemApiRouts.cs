@@ -29,5 +29,27 @@ public static class SystemApiRouts
         public const string Add = Base;
         public const string Update = Base + "/{id}";
         public const string Delete = Base + "/{id}";
+        public const string AddStudyLevel = Base + "/add-study-level";
+        public const string GetStudyLevels = Base + "/{id}/study-levels"; // New route
+    }
+
+    public static class StudyLevels
+    {
+        public const string Base = "api/v1/studylevels";
+        public const string GetById = Base + "/{id}";
+        public const string GetAll = Base;
+        public const string Add = Base;
+        public const string Update = Base + "/{id}";
+        public const string Delete = Base + "/{id}";
+    }
+
+    public static class Courses
+    {
+        public const string Base = "api/v1/courses";
+        public const string GetById = Base + "/{id}";
+        public const string GetAll = Base;
+        public const string Add = Base;
+        public const string Update = Base + "/{id}";
+        public const string Delete = Base + "/{id}";
     }
 }

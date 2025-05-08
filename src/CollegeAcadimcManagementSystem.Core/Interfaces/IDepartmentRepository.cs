@@ -7,4 +7,6 @@ public interface IDepartmentRepository : IBaseRepository<Department>
     Task<BaseResponse<string>> AddDepartmentAsync(AddDepartmentDto departmentDto);
     Task<BaseResponse<string>> UpdateDepartmentAsync(int id, UpdateDepartmentDto departmentDto);
     Task<BaseResponse<string>> DeleteDepartmentAsync(int id);
+    Task<BaseResponse<string>> AddStudyLevelToDepartmentAsync(int departmentId, int studyLevelId);
+    Task<BaseResponse<List<DepartmentStudyLevelDto>>> GetStudyLevelsInDepartmentAsync(int departmentId);
 }

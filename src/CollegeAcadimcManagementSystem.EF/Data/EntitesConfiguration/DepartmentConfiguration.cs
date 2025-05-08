@@ -15,6 +15,10 @@ internal class DepartmentConfiguration : IEntityTypeConfiguration<Department>
         // Global filter to exclude deleted departments
         builder.HasQueryFilter(e => !e.IsDeleted);
 
+        builder.HasMany(d => d.DepartmentStudyLevels)
+            .WithOne(dsl => dsl.Department)
+            .HasForeignKey(dsl => dsl.DepartmentId);
+
         builder.HasData(SeedData.SeedDepartments());
     }
 }

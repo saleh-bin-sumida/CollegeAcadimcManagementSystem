@@ -446,4 +446,91 @@ public static class SeedData
             }
         };
     }
+
+    public static List<StudyLevel> SeedStudyLevels()
+    {
+        return new List<StudyLevel>
+        {
+            new StudyLevel
+            {
+                Id = 1,
+                Name = "Level 1",
+                CreatedDate = new DateTime(2023, 10, 1),
+                IsDeleted = false
+            },
+            new StudyLevel
+            {
+                Id = 2,
+                Name = "Level 2",
+                CreatedDate = new DateTime(2023, 10, 1),
+                IsDeleted = false
+            },
+            new StudyLevel
+            {
+                Id = 3,
+                Name = "Level 3",
+                CreatedDate = new DateTime(2023, 10, 1),
+                IsDeleted = false
+            },
+            new StudyLevel
+            {
+                Id = 4,
+                Name = "Level 4",
+                CreatedDate = new DateTime(2023, 10, 1),
+                IsDeleted = false
+            },
+            new StudyLevel
+            {
+                Id = 5,
+                Name = "Level 5",
+                CreatedDate = new DateTime(2023, 10, 1),
+                IsDeleted = false
+            },
+            new StudyLevel
+            {
+                Id = 6,
+                Name = "Level 6",
+                CreatedDate = new DateTime(2023, 10, 1),
+                IsDeleted = false
+            }
+        };
+    }
+
+    public static List<DepartmentStudyLevel> SeedDepartmentStudyLevels()
+    {
+        return new List<DepartmentStudyLevel>
+        {
+            new DepartmentStudyLevel { DepartmentId = 1, StudyLevelId = 1 },
+            new DepartmentStudyLevel { DepartmentId = 1, StudyLevelId = 2 },
+            new DepartmentStudyLevel { DepartmentId = 1, StudyLevelId = 3 },
+            new DepartmentStudyLevel { DepartmentId = 1, StudyLevelId = 4 },
+            new DepartmentStudyLevel { DepartmentId = 1, StudyLevelId = 5 },
+            new DepartmentStudyLevel { DepartmentId = 1, StudyLevelId = 6 },
+            new DepartmentStudyLevel { DepartmentId = 2, StudyLevelId = 1 },
+            new DepartmentStudyLevel { DepartmentId = 2, StudyLevelId = 2 },
+            new DepartmentStudyLevel { DepartmentId = 2, StudyLevelId = 3 },
+            new DepartmentStudyLevel { DepartmentId = 3, StudyLevelId = 4 },
+            new DepartmentStudyLevel { DepartmentId = 3, StudyLevelId = 5 },
+            new DepartmentStudyLevel { DepartmentId = 3, StudyLevelId = 6 },
+        };
+    }
+
+    //public static List<Course> SeedCourses()
+    //{
+    //    return new List<Course>
+    //    {
+    //        new Course { Id = 1, Title = "Mathematics 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false },
+    //        new Course { Id = 2, Title = "Physics 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false }
+    //    };
+    //}
+
+    //public static List<DepartmentStudyLevelCourse> SeedCourseDepartmentStudyLevels()
+    //{
+    //    return new List<DepartmentStudyLevelCourse>
+    //    {
+    //        new DepartmentStudyLevelCourse { CourseId = 1,DepartmentStudyLevelId = 1 },
+    //        new DepartmentStudyLevelCourse { CourseId = 2,DepartmentStudyLevelId = 1 },
+    //        new DepartmentStudyLevelCourse { CourseId = 2, DepartmentStudyLevelId = 2 }
+    //    };
+    //}
 }

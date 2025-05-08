@@ -47,10 +47,11 @@ public static class SystemApiRouts
     {
         public const string Base = "api/v1/courses";
         public const string GetAll = Base;
-        public const string GetAllByDepStudyLevel = Base + "/ByDepStudyLevel/{depStudyLevelId}";
+        public const string GetAllByDepStudyLevel = Base + "/byDepStudyLevel/{depStudyLevelId}";
         public const string GetById = Base + "/{id}";
         public const string Add = Base;
         public const string Update = Base + "/{id}";
         public const string Delete = Base + "/{id}";
+        public const string GetAllByInstrucotr = Base + "byInstrucotr/{instructorId}";
     }
 }

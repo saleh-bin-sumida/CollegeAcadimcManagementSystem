@@ -16,6 +16,21 @@ public class InstructorsController(IUnitOfWork _unitOfWork, ILogger<InstructorsC
         return Ok(response);
     }
 
+
+
+    //[HttpGet(SystemApiRouts.Instructors.GetAll)]
+    //[ProducesResponseType(typeof(BaseResponse<PagedResult<InstructorDto>>), StatusCodes.Status200OK)]
+    //public async Task<IActionResult> GetAllInstructorsBy(
+    //    int pageSize = 10,
+    //    int pageNumber = 1,
+    //    string? searchTerm = null)
+    //{
+    //    var response = await _unitOfWork.Instructors.GetPagedInstructors(pageSize, pageNumber, searchTerm);
+    //    return Ok(response);
+    //}
+
+
+
     [HttpGet(SystemApiRouts.Instructors.GetById)]
     [ProducesResponseType(typeof(BaseResponse<InstructorDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResponse<InstructorDto>), StatusCodes.Status404NotFound)]

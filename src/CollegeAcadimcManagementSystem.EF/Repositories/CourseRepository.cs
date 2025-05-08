@@ -33,6 +33,22 @@ public class CourseRepository : BaseRepository<Course>, ICourseRepository
     }
 
 
+    public async Task<BaseResponse<IEnumerable<CourseDto>>> GetCoursesByInstrucotr(int instructorId)
+    {
+        if (!await _context.Instructors.AnyAsync(x => x.Id == instructorId))
+            return BaseResponse<IEnumerable<CourseDto>>.ErrorResponse("instructor not found");
+
+
+        var courses = await _context.DepStudyLevelCourseInstructors.Where(x => x.InstructorId == instructorId)
+            .Select(x => new CourseDto
+            {
+                Id = x.DepStudyLevelCourse.CourseId,
+                Title = x.DepStudyLevelCourse.Course.Title
+            }).ToListAsync();
+
+        return BaseResponse<IEnumerable<CourseDto>>.SuccessResponse("Courses retrieved successfully", courses);
+    }
+
     public async Task<BaseResponse<IEnumerable<CourseDto>>> GetCoursesByDepStudyLevel(int depStudyLevelId)
     {
 
@@ -86,4 +102,6 @@ public class CourseRepository : BaseRepository<Course>, ICourseRepository
         await DeleteAsync(course);
         return BaseResponse<string>.SuccessResponse();
     }
+
+
 }

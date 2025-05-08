@@ -26,6 +26,14 @@ public class CoursesController(IUnitOfWork _unitOfWork, ILogger<CoursesControlle
         return Ok(response);
     }
 
+    [HttpGet(SystemApiRouts.Courses.GetAllByInstrucotr)]
+    [ProducesResponseType(typeof(BaseResponse<PagedResult<CourseDto>>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetAllCoursesByInstrucotr(int instructorId)
+    {
+        var response = await _unitOfWork.Courses.GetCoursesByInstrucotr(instructorId);
+        return Ok(response);
+    }
+
 
 
     [HttpGet(SystemApiRouts.Courses.GetById)]

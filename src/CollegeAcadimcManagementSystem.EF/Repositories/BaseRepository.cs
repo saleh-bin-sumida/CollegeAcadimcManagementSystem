@@ -1,7 +1,4 @@
-﻿using Mapster;
-using Microsoft.Extensions.Logging;
-
-namespace CollegeAcadimcManagementSystem.EF.Repositories;
+﻿namespace CollegeAcadimcManagementSystem.EF.Repositories;
 
 
 public class BaseRepository<T>(AppDbContext _context, ILogger<BaseRepository<T>> _logger) :
@@ -122,14 +119,10 @@ public class BaseRepository<T>(AppDbContext _context, ILogger<BaseRepository<T>>
         int pageSize = 10,
         params Expression<Func<T, object>>[] includes)
     {
+
         var query = BuildQuery(orderBy, criteria, includes);
 
-        var totalRecords = await query.CountAsync();
-        var items = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
-
-        return PagedResult<T>.Create(totalRecords, pageNumber, pageSize, items);
-
-
+        return await GetPagedResultAsync<T>(query, pageSize, pageNumber);
     }
 
     public async Task<PagedResult<TResult>> GetPagedDataWithSelectionAsync<TResult>(
@@ -141,13 +134,9 @@ public class BaseRepository<T>(AppDbContext _context, ILogger<BaseRepository<T>>
     {
         var query = BuildQuery(orderBy, criteria, includes);
 
-        var totalRecords = await query.CountAsync();
-
         var projectedQuery = query.ProjectToType<TResult>();
 
-        var items = await projectedQuery.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
-
-        return PagedResult<TResult>.Create(pageSize, pageNumber, totalRecords, items);
+        return await GetPagedResultAsync(projectedQuery, pageSize, pageNumber);
 
 
     }
@@ -293,5 +282,17 @@ public class BaseRepository<T>(AppDbContext _context, ILogger<BaseRepository<T>>
     }
 
     #endregion
+
+
+    public static async Task<PagedResult<T>> GetPagedResultAsync<T>(IQueryable<T> query, int pageSize, int pageNumber)
+    {
+        var totalItems = await query.CountAsync();
+        var items = await query
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return new PagedResult<T>(pageSize, pageNumber, totalItems, items);
+    }
 
 }

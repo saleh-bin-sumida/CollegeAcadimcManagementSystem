@@ -19,7 +19,12 @@ public static class EFServices
 
         services.AddDbContext<AppDbContext>(options =>
         {
-            options.UseSqlServer(GetConnectionStringOrThrow(configuration));
+            options.UseSqlServer(GetConnectionStringOrThrow(configuration), sqlOptions =>
+            {
+                sqlOptions.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
+                //sqlOptions.EnableRetryOnFailure(); // Enables retry logic for transient failures
+                //sqlOptions.CommandTimeout(60); // Sets the command timeout to 60 seconds
+            });
             options.EnableSensitiveDataLogging();
         });
     }

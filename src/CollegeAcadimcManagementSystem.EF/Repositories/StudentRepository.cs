@@ -34,9 +34,103 @@ public class StudentRepository : BaseRepository<Student>, IStudentRepository
         return BaseResponse<PagedResult<StudentDto>>.SuccessResponse("student retrived succfully", students);
     }
 
+
+    public async Task<BaseResponse<PagedResult<StudentDto>>> GetStudentsByDepartment(
+        int departmentId,
+        int pageSize,
+        int pageNumber,
+        string? searchTerm)
+    {
+        if (!await _context.Departments.AnyAsync(x => x.Id == departmentId))
+            return BaseResponse<PagedResult<StudentDto>>.ErrorResponse("department not found");
+
+        var depStudyLevelsIds = _context.DepartmentStudyLevels
+            .Where(x => x.DepartmentId == departmentId)
+            .Select(x => x.Id);
+
+
+
+        var query = _context.StudentEnrollments
+            .Where(x => depStudyLevelsIds.Contains(x.DepartmentStudyLevelId))
+            .Select(x => new StudentDto
+            {
+                Id = x.StudentId,
+                FullName = x.Student.FirstName + " " + x.Student.LastName,
+                Email = x.Student.Email,
+                PhoneNumber = x.Student.PhoneNumber,
+            });
+
+        if (!string.IsNullOrEmpty(searchTerm))
+        {
+            query = query.Where(x => x.FullName.Contains(searchTerm)
+            || x.Email.Contains(searchTerm) ||
+            x.PhoneNumber.Contains(searchTerm));
+        }
+
+        var pagedResult = await GetPagedResultAsync(query, pageSize, pageNumber);
+
+        return BaseResponse<PagedResult<StudentDto>>.SuccessResponse("students retrieved successfully", pagedResult);
+    }
+
+
+
+    public async Task<BaseResponse<PagedResult<StudentDto>>> GetStudentsByDepartmentStudyLevel(
+        int departmentStudyLevelId,
+        int pageSize,
+        int pageNumber,
+        string? searchTerm)
+    {
+        if (!await _context.DepartmentStudyLevels.AnyAsync(x => x.Id == departmentStudyLevelId))
+            return BaseResponse<PagedResult<StudentDto>>.ErrorResponse("department Study Level not found");
+
+
+        var query = _context.StudentEnrollments
+            .Where(x => x.DepartmentStudyLevelId == departmentStudyLevelId)
+            .Select(x => new StudentDto
+            {
+                Id = x.StudentId,
+                FullName = x.Student.FirstName + " " + x.Student.LastName,
+                Email = x.Student.Email,
+                PhoneNumber = x.Student.PhoneNumber,
+            });
+
+        if (!string.IsNullOrEmpty(searchTerm))
+        {
+            query = query.Where(x => x.FullName.Contains(searchTerm)
+            || x.Email.Contains(searchTerm) || x.PhoneNumber.Contains(searchTerm));
+        }
+
+        var pagedResult = await GetPagedResultAsync(query, pageSize, pageNumber);
+
+        return BaseResponse<PagedResult<StudentDto>>.SuccessResponse("students retrieved successfully", pagedResult);
+    }
+
+
+
+    public async Task<BaseResponse<PagedResult<StudentDto>>> GetStudentsByInstructor(
+        int instructorId,
+        int pageSize,
+        int pageNumber,
+        string? searchTerm)
+    {
+        //TODO:
+        throw new NotImplementedException();
+    }
+
+    public async Task<BaseResponse<PagedResult<StudentDto>>> GetStudentsByCourse(
+        int courseId,
+        int pageSize,
+        int pageNumber,
+        string? searchTerm)
+    {
+        //TODO:
+        throw new NotImplementedException();
+    }
+
+
+
     public async Task<BaseResponse<StudentDto>> GetStudentById(int id)
     {
-
         var student = await FindWithSelectionAsync<StudentDto>(x => x.Id == id);
         if (student is null)
             return BaseResponse<StudentDto>.ErrorResponse("student not found");
@@ -86,4 +180,5 @@ public class StudentRepository : BaseRepository<Student>, IStudentRepository
         return BaseResponse<string>.SuccessResponse();
 
     }
+
 }

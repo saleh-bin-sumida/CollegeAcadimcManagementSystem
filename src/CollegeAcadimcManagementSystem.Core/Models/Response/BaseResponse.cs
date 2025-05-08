@@ -21,7 +21,7 @@ public class BaseResponse<T>
         Errors = errors;
     }
 
-    public BaseResponse()
+    private BaseResponse()
     {
 
     }

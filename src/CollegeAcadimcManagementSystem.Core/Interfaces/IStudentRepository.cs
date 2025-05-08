@@ -5,7 +5,33 @@ public interface IStudentRepository
     Task<BaseResponse<PagedResult<StudentDto>>> GetPagedStudents(
         int pageSize,
         int pageNumber,
-        string searchTerm);
+        string? searchTerm);
+
+
+    Task<BaseResponse<PagedResult<StudentDto>>> GetStudentsByDepartment(
+        int departmentId,
+        int pageSize,
+        int pageNumber,
+        string? searchTerm);
+
+    Task<BaseResponse<PagedResult<StudentDto>>> GetStudentsByDepartmentStudyLevel(
+        int departmentStudyLevelId,
+        int pageSize,
+        int pageNumber,
+        string? searchTerm);
+
+    Task<BaseResponse<PagedResult<StudentDto>>> GetStudentsByInstructor(
+        int instructorId,
+        int pageSize,
+        int pageNumber,
+        string? searchTerm);
+
+
+    Task<BaseResponse<PagedResult<StudentDto>>> GetStudentsByCourse(
+        int courseId,
+        int pageSize,
+        int pageNumber,
+        string? searchTerm);
 
     Task<BaseResponse<StudentDto>> GetStudentById(int id);
 

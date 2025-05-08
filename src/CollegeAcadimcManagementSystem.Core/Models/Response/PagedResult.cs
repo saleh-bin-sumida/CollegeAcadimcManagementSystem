@@ -12,7 +12,7 @@ public class PagedResult<T>
     public bool HasPreveiosPage => PageNumber > 1;
 
 
-    public PagedResult()
+    private PagedResult()
     {
 
     }
@@ -25,11 +25,5 @@ public class PagedResult<T>
         Items = items;
         TotalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
     }
-
-    public static PagedResult<T> Create(int pageSize, int pageNumber, int totalRecords, List<T> items)
-    {
-        return new PagedResult<T>(pageSize, pageNumber, totalRecords, items);
-    }
-
 
 }

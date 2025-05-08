@@ -20,6 +20,10 @@ namespace CollegeAcadimcManagementSystem.Core.Mapping
                 .Map(dest => dest.StudyLevelId, src => src.Id)
                 .Map(dest => dest.StudyLevelName, src => src.Name);
 
+            TypeAdapterConfig<DepartmentStudyLevelCourse, CourseDto>.NewConfig()
+                .Map(dest => dest.Id, src => src.CourseId)
+                .Map(dest => dest.Title, src => src.Course.Title);
+
         }
     }
 }

@@ -9,7 +9,7 @@ public class UnitOfWork : IUnitOfWork
     private IInstructorsRepository? _instructorRepository;
     private IDepartmentRepository? _departmentRepository;
     private IStudyLevelRepository? _studyLevelRepository;
-    //private ICourseRepository? _courseRepository;
+    private ICourseRepository? _courseRepository;
 
     public UnitOfWork(AppDbContext context, IServiceProvider serviceProvider)
     {
@@ -29,8 +29,8 @@ public class UnitOfWork : IUnitOfWork
     public IStudyLevelRepository StudyLevels => _studyLevelRepository ??=
         new StudyLevelRepository(_context, _serviceProvider.GetRequiredService<ILogger<StudyLevelRepository>>());
 
-    //public ICourseRepository Courses => _courseRepository ??=
-    //    new CourseRepository(_context, _serviceProvider.GetRequiredService<ILogger<CourseRepository>>());
+    public ICourseRepository Courses => _courseRepository ??=
+        new CourseRepository(_context, _serviceProvider.GetRequiredService<ILogger<CourseRepository>>());
 
     public void Dispose()
     {

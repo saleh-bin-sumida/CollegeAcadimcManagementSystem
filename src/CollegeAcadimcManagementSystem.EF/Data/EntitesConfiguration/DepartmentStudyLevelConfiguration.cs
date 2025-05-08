@@ -6,7 +6,7 @@ internal class DepartmentStudyLevelConfiguration : IEntityTypeConfiguration<Depa
     {
         builder.ToTable(TablesNames.DepartmentStudyLevels);
 
-        builder.HasKey(dsl => new { dsl.DepartmentId, dsl.StudyLevelId });
+        builder.HasKey(dsl => dsl.Id);
 
         builder.HasOne(dsl => dsl.Department)
             .WithMany(d => d.DepartmentStudyLevels)
@@ -15,6 +15,9 @@ internal class DepartmentStudyLevelConfiguration : IEntityTypeConfiguration<Depa
         builder.HasOne(dsl => dsl.StudyLevel)
             .WithMany(sl => sl.DepartmentStudyLevels)
             .HasForeignKey(dsl => dsl.StudyLevelId);
+
+        builder.HasQueryFilter(e => !e.StudyLevel.IsDeleted && !e.Department.IsDeleted);
+
 
         builder.HasData(SeedData.SeedDepartmentStudyLevels());
     }

@@ -4,6 +4,7 @@ using CollegeAcadimcManagementSystem.EF.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CollegeAcadimcManagementSystem.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250508075245_DepartmentStudyLevelCourses")]
+    partial class DepartmentStudyLevelCourses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,78 +53,6 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Courses", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Title = "Mathematics 101"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Title = "Physics 101"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Title = "Chemistry 101"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Title = "Biology 101"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Title = "Computer Science 101"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Title = "History 101"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Title = "Philosophy 101"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Title = "Economics 101"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Title = "Statistics 101"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            CreatedDate = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            Title = "Literature 101"
-                        });
                 });
 
             modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.Department", b =>
@@ -303,68 +234,6 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                     b.HasIndex("DepartmentStudyLevelId");
 
                     b.ToTable("DepartmentStudyLevelCourses", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CourseId = 1,
-                            DepartmentStudyLevelId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CourseId = 2,
-                            DepartmentStudyLevelId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CourseId = 3,
-                            DepartmentStudyLevelId = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CourseId = 4,
-                            DepartmentStudyLevelId = 2
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CourseId = 5,
-                            DepartmentStudyLevelId = 3
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CourseId = 6,
-                            DepartmentStudyLevelId = 3
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CourseId = 7,
-                            DepartmentStudyLevelId = 4
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CourseId = 8,
-                            DepartmentStudyLevelId = 4
-                        },
-                        new
-                        {
-                            Id = 9,
-                            CourseId = 9,
-                            DepartmentStudyLevelId = 5
-                        },
-                        new
-                        {
-                            Id = 10,
-                            CourseId = 10,
-                            DepartmentStudyLevelId = 5
-                        });
                 });
 
             modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.Instructor", b =>

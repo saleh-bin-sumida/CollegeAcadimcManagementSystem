@@ -8,11 +8,11 @@ public class AppDbContext : DbContext
 
     public DbSet<Student> Students { get; set; }
     public DbSet<Instructor> Instructors { get; set; }
-    public DbSet<Department> Departments { get; set; } // Added Departments DbSet
-    public DbSet<StudyLevel> StudyLevels { get; set; } // Added StudyLevels DbSet
-    public DbSet<DepartmentStudyLevel> DepartmentStudyLevels { get; set; } // Added join entity DbSet
-    //public DbSet<Course> Courses { get; set; }
-    //public DbSet<DepartmentStudyLevelCourse> CourseDepartmentStudyLevels { get; set; }
+    public DbSet<Department> Departments { get; set; }
+    public DbSet<StudyLevel> StudyLevels { get; set; }
+    public DbSet<DepartmentStudyLevel> DepartmentStudyLevels { get; set; }
+    public DbSet<DepartmentStudyLevelCourse> DepartmentStudyLevelCourses { get; set; }
+    public DbSet<Course> Courses { get; set; }
 
     #endregion
 

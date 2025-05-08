@@ -500,29 +500,53 @@ public static class SeedData
     {
         return new List<DepartmentStudyLevel>
         {
-            new DepartmentStudyLevel { DepartmentId = 1, StudyLevelId = 1 },
-            new DepartmentStudyLevel { DepartmentId = 1, StudyLevelId = 2 },
-            new DepartmentStudyLevel { DepartmentId = 1, StudyLevelId = 3 },
-            new DepartmentStudyLevel { DepartmentId = 1, StudyLevelId = 4 },
-            new DepartmentStudyLevel { DepartmentId = 1, StudyLevelId = 5 },
-            new DepartmentStudyLevel { DepartmentId = 1, StudyLevelId = 6 },
-            new DepartmentStudyLevel { DepartmentId = 2, StudyLevelId = 1 },
-            new DepartmentStudyLevel { DepartmentId = 2, StudyLevelId = 2 },
-            new DepartmentStudyLevel { DepartmentId = 2, StudyLevelId = 3 },
-            new DepartmentStudyLevel { DepartmentId = 3, StudyLevelId = 4 },
-            new DepartmentStudyLevel { DepartmentId = 3, StudyLevelId = 5 },
-            new DepartmentStudyLevel { DepartmentId = 3, StudyLevelId = 6 },
+            new DepartmentStudyLevel {Id = 1, DepartmentId = 1, StudyLevelId = 1 },
+            new DepartmentStudyLevel {Id = 2, DepartmentId = 1, StudyLevelId = 2 },
+            new DepartmentStudyLevel {Id = 3, DepartmentId = 1, StudyLevelId = 3 },
+            new DepartmentStudyLevel {Id = 4, DepartmentId = 1, StudyLevelId = 4 },
+            new DepartmentStudyLevel {Id = 5, DepartmentId = 1, StudyLevelId = 5 },
+            new DepartmentStudyLevel {Id = 6, DepartmentId = 1, StudyLevelId = 6 },
+            new DepartmentStudyLevel {Id = 7, DepartmentId = 2, StudyLevelId = 1 },
+            new DepartmentStudyLevel {Id = 8, DepartmentId = 2, StudyLevelId = 2 },
+            new DepartmentStudyLevel {Id = 9, DepartmentId = 2, StudyLevelId = 3 },
+            new DepartmentStudyLevel {Id = 10, DepartmentId = 3, StudyLevelId = 4 },
+            new DepartmentStudyLevel {Id = 11, DepartmentId = 3, StudyLevelId = 5 },
+            new DepartmentStudyLevel {Id = 12, DepartmentId = 3, StudyLevelId = 6 },
         };
     }
 
-    //public static List<Course> SeedCourses()
-    //{
-    //    return new List<Course>
-    //    {
-    //        new Course { Id = 1, Title = "Mathematics 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false },
-    //        new Course { Id = 2, Title = "Physics 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false }
-    //    };
-    //}
+    public static List<Course> SeedCourses()
+    {
+        return new List<Course>
+        {
+            new Course { Id = 1, Title = "Mathematics 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false },
+            new Course { Id = 2, Title = "Physics 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false },
+            new Course { Id = 3, Title = "Chemistry 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false },
+            new Course { Id = 4, Title = "Biology 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false },
+            new Course { Id = 5, Title = "Computer Science 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false },
+            new Course { Id = 6, Title = "History 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false },
+            new Course { Id = 7, Title = "Philosophy 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false },
+            new Course { Id = 8, Title = "Economics 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false },
+            new Course { Id = 9, Title = "Statistics 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false },
+            new Course { Id = 10, Title = "Literature 101", CreatedDate = new DateTime(2023, 10, 1), IsDeleted = false }
+        };
+    }
+    public static List<DepartmentStudyLevelCourse> SeedDepartmentStudyLevelCourses()
+    {
+        return new List<DepartmentStudyLevelCourse>
+        {
+            new DepartmentStudyLevelCourse { Id = 1, CourseId = 1, DepartmentStudyLevelId = 1 },
+            new DepartmentStudyLevelCourse { Id = 2, CourseId = 2, DepartmentStudyLevelId = 1 },
+            new DepartmentStudyLevelCourse { Id = 3, CourseId = 3, DepartmentStudyLevelId = 2 },
+            new DepartmentStudyLevelCourse { Id = 4, CourseId = 4, DepartmentStudyLevelId = 2 },
+            new DepartmentStudyLevelCourse { Id = 5, CourseId = 5, DepartmentStudyLevelId = 3 },
+            new DepartmentStudyLevelCourse { Id = 6, CourseId = 6, DepartmentStudyLevelId = 3 },
+            new DepartmentStudyLevelCourse { Id = 7, CourseId = 7, DepartmentStudyLevelId = 4 },
+            new DepartmentStudyLevelCourse { Id = 8, CourseId = 8, DepartmentStudyLevelId = 4 },
+            new DepartmentStudyLevelCourse { Id = 9, CourseId = 9, DepartmentStudyLevelId = 5 },
+            new DepartmentStudyLevelCourse { Id = 10, CourseId = 10, DepartmentStudyLevelId = 5 }
+        };
+    }
 
     //public static List<DepartmentStudyLevelCourse> SeedCourseDepartmentStudyLevels()
     //{

@@ -10,6 +10,7 @@ public class UnitOfWork : IUnitOfWork
     private IDepartmentRepository? _departmentRepository;
     private IStudyLevelRepository? _studyLevelRepository;
     private ICourseRepository? _courseRepository;
+    private IDepartmentStudyLevelRepo? _departmentStudyLevelRepository;
 
     public UnitOfWork(AppDbContext context, IServiceProvider serviceProvider)
     {
@@ -31,6 +32,10 @@ public class UnitOfWork : IUnitOfWork
 
     public ICourseRepository Courses => _courseRepository ??=
         new CourseRepository(_context, _serviceProvider.GetRequiredService<ILogger<CourseRepository>>());
+
+    public IDepartmentStudyLevelRepo DepartmentStudyLevels => _departmentStudyLevelRepository ??=
+    new DepartmentStudyLevelRepo(_context, _serviceProvider.GetRequiredService<ILogger<DepartmentStudyLevelRepo>>());
+
 
     public void Dispose()
     {

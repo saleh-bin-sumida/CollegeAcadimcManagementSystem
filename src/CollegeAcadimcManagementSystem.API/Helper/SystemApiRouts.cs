@@ -34,7 +34,6 @@ public static class SystemApiRouts
         public const string Update = Base + "/{id}";
         public const string Delete = Base + "/{id}";
         public const string AddStudyLevel = Base + "/add-study-level";
-        public const string GetStudyLevels = Base + "/{id}/study-levels"; // New route
     }
 
     public static class StudyLevels
@@ -42,6 +41,8 @@ public static class SystemApiRouts
         public const string Base = "api/v1/studylevels";
         public const string GetById = Base + "/{id}";
         public const string GetAll = Base;
+        public const string GetByDepartment = Base + "/byDepartment/{departmentId}";
+        public const string GetByCourse = Base + "/byCourse/{courseId}";
         public const string Add = Base;
         public const string Update = Base + "/{id}";
         public const string Delete = Base + "/{id}";
@@ -51,6 +52,7 @@ public static class SystemApiRouts
     {
         public const string Base = "api/v1/courses";
         public const string GetAll = Base;
+        public const string GetByDepartment = Base + "/byDepartment/{departmentId}";
         public const string GetAllByDepStudyLevel = Base + "/byDepStudyLevel/{depStudyLevelId}";
         public const string GetById = Base + "/{id}";
         public const string Add = Base;
@@ -58,4 +60,14 @@ public static class SystemApiRouts
         public const string Delete = Base + "/{id}";
         public const string GetAllByInstrucotr = Base + "byInstrucotr/{instructorId}";
     }
+
+    public static class DepartmentStudyLevels
+    {
+        public const string Base = "api/v1/departmentstudylevels";
+        public const string GetAll = Base;
+        public const string GetByCourse = Base + "/byCourse/{courseId}";
+        public const string GetByStudyLevel = Base + "/byStudyLevel/{studyLevelId}";
+        public const string GetByDepartment = Base + "/byDepartment/{departmentId}";
+    }
+
 }

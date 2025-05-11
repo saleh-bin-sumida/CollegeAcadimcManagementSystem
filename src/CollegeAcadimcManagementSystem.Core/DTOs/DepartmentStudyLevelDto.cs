@@ -2,7 +2,7 @@ namespace CollegeAcadimcManagementSystem.Core.DTOs;
 
 public class DepartmentStudyLevelDto
 {
-    public int StudyLevelId { get; set; }
+    public string DepartmentName { get; set; }
     public string StudyLevelName { get; set; }
 }
 

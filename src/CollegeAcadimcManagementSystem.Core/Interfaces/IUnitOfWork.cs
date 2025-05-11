@@ -7,7 +7,7 @@ public interface IUnitOfWork : IDisposable
     IDepartmentRepository Departments { get; }
     IStudyLevelRepository StudyLevels { get; }
     ICourseRepository Courses { get; }
-
+    IDepartmentStudyLevelRepo DepartmentStudyLevels { get; }
     Task<int> SaveAsync();
 
 }

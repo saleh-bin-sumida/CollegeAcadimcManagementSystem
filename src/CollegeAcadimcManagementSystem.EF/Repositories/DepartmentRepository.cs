@@ -50,6 +50,26 @@ public class DepartmentRepository : BaseRepository<Department>, IDepartmentRepos
         return BaseResponse<string>.SuccessResponse();
     }
 
+    public async Task<BaseResponse<string>> AddStudyLevelToDepartmentAsync(int departmentId, int studyLevelId)
+    {
+        if (!await AnyAsync(x => x.Id == departmentId))
+            return BaseResponse<string>.ErrorResponse("Department not found");
+
+
+        if (!await _context.StudyLevels.AnyAsync(x => x.Id == departmentId))
+            return BaseResponse<string>.ErrorResponse("Study level not found");
+
+        // TODO: prevent Study level already exsist in department
+        _context.DepartmentStudyLevels.Add(new DepartmentStudyLevel
+        {
+            DepartmentId = departmentId,
+            StudyLevelId = studyLevelId
+        });
+
+        await _context.SaveChangesAsync();
+        return BaseResponse<string>.SuccessResponse("Study level added to department successfully");
+    }
+
     public async Task<BaseResponse<string>> UpdateDepartmentAsync(int id, UpdateDepartmentDto departmentDto)
     {
         if (id != departmentDto.Id)
@@ -73,50 +93,5 @@ public class DepartmentRepository : BaseRepository<Department>, IDepartmentRepos
 
         await DeleteAsync(department);
         return BaseResponse<string>.SuccessResponse();
-    }
-
-    public async Task<BaseResponse<string>> AddStudyLevelToDepartmentAsync(int departmentId, int studyLevelId)
-    {
-        if (!await AnyAsync(x => x.Id == departmentId))
-            return BaseResponse<string>.ErrorResponse("Department not found");
-
-
-        if (!await _context.StudyLevels.AnyAsync(x => x.Id == departmentId))
-            return BaseResponse<string>.ErrorResponse("Study level not found");
-
-        // TODO: prevent Study level already exsist in department
-        _context.DepartmentStudyLevels.Add(new DepartmentStudyLevel
-        {
-            DepartmentId = departmentId,
-            StudyLevelId = studyLevelId
-        });
-
-        await _context.SaveChangesAsync();
-        return BaseResponse<string>.SuccessResponse("Study level added to department successfully");
-    }
-
-    public async Task<BaseResponse<List<DepartmentStudyLevelDto>>> GetStudyLevelsInDepartmentAsync(int departmentId)
-    {
-        if (!await AnyAsync(x => x.Id == departmentId))
-            return BaseResponse<List<DepartmentStudyLevelDto>>.ErrorResponse("Department not found");
-
-
-        //  deparmtes => departmentsStudyLevels => levels
-        //var DepStudyLevels = await _context
-        //    .Departments.Where(x => x.Id == departmentId)
-        //    .SelectMany(dep => dep.DepartmentStudyLevels.Select(x => x.StudyLevel))
-        //    .ProjectToType<DepartmentStudyLevelDto>().ToListAsync();
-
-
-        // deparmtes => departmentsStudyLevels => levels
-        var DepStudyLevels = await _context
-            .DepartmentStudyLevels.Where(x => x.DepartmentId == departmentId)
-            .Select(x => new DepartmentStudyLevelDto
-            {
-                StudyLevelId = x.StudyLevelId,
-                StudyLevelName = x.StudyLevel.Name
-            }).ToListAsync();
-
-        return BaseResponse<List<DepartmentStudyLevelDto>>.SuccessResponse("Study levels retrieved successfully", DepStudyLevels);
     }
 }

@@ -7,7 +7,7 @@ public class StudyLevelsController(IUnitOfWork _unitOfWork, ILogger<StudyLevelsC
 
     [HttpGet(SystemApiRouts.StudyLevels.GetAll)]
     [ProducesResponseType(typeof(BaseResponse<PagedResult<StudyLevelDto>>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetAllStudyLevels(
+    public async Task<IActionResult> GetPagedStudyLevels(
         int pageSize = 10,
         int pageNumber = 1,
         string? searchTerm = null)
@@ -15,6 +15,25 @@ public class StudyLevelsController(IUnitOfWork _unitOfWork, ILogger<StudyLevelsC
         var response = await _unitOfWork.StudyLevels.GetPagedStudyLevels(pageSize, pageNumber, searchTerm);
         return Ok(response);
     }
+
+    [HttpGet(SystemApiRouts.StudyLevels.GetByDepartment)]
+    [ProducesResponseType(typeof(BaseResponse<PagedResult<StudyLevelDto>>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetStudyLevelsByDepartment(int departmentId)
+    {
+        var response = await _unitOfWork.StudyLevels.GetStudyLevelsByDepartmentAsync(departmentId);
+        return Ok(response);
+    }
+
+
+    [HttpGet(SystemApiRouts.StudyLevels.GetByCourse)]
+    [ProducesResponseType(typeof(BaseResponse<PagedResult<StudyLevelDto>>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetStudyLevelsByCourse(int courseId)
+    {
+        var response = await _unitOfWork.StudyLevels.GetStudyLevelsByCourseAsync(courseId);
+        return Ok(response);
+    }
+
+
 
     [HttpGet(SystemApiRouts.StudyLevels.GetById)]
     [ProducesResponseType(typeof(BaseResponse<StudyLevelDto>), StatusCodes.Status200OK)]
@@ -37,7 +56,7 @@ public class StudyLevelsController(IUnitOfWork _unitOfWork, ILogger<StudyLevelsC
     [HttpPost(SystemApiRouts.StudyLevels.Add)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> CreateStudyLevel(AddStudyLevelDto studyLevelDto)
+    public async Task<IActionResult> AddStudyLevel(AddStudyLevelDto studyLevelDto)
     {
         var response = await _unitOfWork.StudyLevels.AddStudyLevelAsync(studyLevelDto);
         if (!response.Success)

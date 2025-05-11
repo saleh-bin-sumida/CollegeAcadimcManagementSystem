@@ -30,20 +30,6 @@ public class DepartmentsController(IUnitOfWork _unitOfWork, ILogger<DepartmentsC
         return Ok(response);
     }
 
-    [HttpGet(SystemApiRouts.Departments.GetStudyLevels)]
-    [ProducesResponseType(typeof(BaseResponse<List<DepartmentStudyLevelDto>>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(BaseResponse<List<DepartmentStudyLevelDto>>), StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetDepartmentStudyLevels(int id)
-    {
-        var response = await _unitOfWork.Departments.GetStudyLevelsInDepartmentAsync(id);
-        if (!response.Success)
-        {
-            _logger.LogWarning("Failed to retrieve study levels for department ID: {Id}", id);
-            return BadRequest(response);
-        }
-        return Ok(response);
-    }
-
     #endregion
 
     #region Post Methods
@@ -51,7 +37,7 @@ public class DepartmentsController(IUnitOfWork _unitOfWork, ILogger<DepartmentsC
     [HttpPost(SystemApiRouts.Departments.Add)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> CreateDepartment(AddDepartmentDto departmentDto)
+    public async Task<IActionResult> AddDepartment(AddDepartmentDto departmentDto)
     {
         var response = await _unitOfWork.Departments.AddDepartmentAsync(departmentDto);
         if (!response.Success)

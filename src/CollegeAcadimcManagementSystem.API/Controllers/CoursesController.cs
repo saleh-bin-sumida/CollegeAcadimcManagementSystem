@@ -17,6 +17,22 @@ public class CoursesController(IUnitOfWork _unitOfWork, ILogger<CoursesControlle
     }
 
 
+    [HttpGet(SystemApiRouts.Courses.GetByDepartment)]
+    [ProducesResponseType(typeof(BaseResponse<IEnumerable<CourseDto>>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(BaseResponse<IEnumerable<CourseDto>>), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> GetCoursesByDepartment(int departmentId)
+    {
+        var response = await _unitOfWork.Courses.GetCoursesByDepartment(departmentId);
+        if (!response.Success)
+        {
+            _logger.LogWarning("Failed to retrieve courses for department ID: {DepartmentId}", departmentId);
+            return BadRequest(response);
+        }
+        return Ok(response);
+    }
+
+
+
 
     [HttpGet(SystemApiRouts.Courses.GetAllByDepStudyLevel)]
     [ProducesResponseType(typeof(BaseResponse<PagedResult<CourseDto>>), StatusCodes.Status200OK)]
@@ -57,7 +73,7 @@ public class CoursesController(IUnitOfWork _unitOfWork, ILogger<CoursesControlle
     [HttpPost(SystemApiRouts.Courses.Add)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> CreateCourse(AddCourseDto courseDto)
+    public async Task<IActionResult> AddCourse(AddCourseDto courseDto)
     {
         var response = await _unitOfWork.Courses.AddCourseAsync(courseDto);
         if (!response.Success)

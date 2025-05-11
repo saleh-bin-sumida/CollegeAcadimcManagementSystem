@@ -50,15 +50,16 @@ public class StudentRepository : BaseRepository<Student>, IStudentRepository
 
 
 
-        var query = _context.StudentEnrollments
+        var depStudyLevelCourseIds = _context.DepartmentStudyLevelCourses
             .Where(x => depStudyLevelsIds.Contains(x.DepartmentStudyLevelId))
-            .Select(x => new StudentDto
-            {
-                Id = x.StudentId,
-                FullName = x.Student.FirstName + " " + x.Student.LastName,
-                Email = x.Student.Email,
-                PhoneNumber = x.Student.PhoneNumber,
-            });
+            .Select(x => x.Id);
+
+
+        var query = _context.StudentEnrollments
+            .Where(x => depStudyLevelCourseIds.Contains(x.DepartmentStudyLevelCourseId))
+            .ProjectToType<StudentDto>();
+
+
 
         if (!string.IsNullOrEmpty(searchTerm))
         {
@@ -84,8 +85,12 @@ public class StudentRepository : BaseRepository<Student>, IStudentRepository
             return BaseResponse<PagedResult<StudentDto>>.ErrorResponse("department Study Level not found");
 
 
-        var query = _context.StudentEnrollments
+        var departmentStudyLevelCourseIds = _context.DepartmentStudyLevelCourses
             .Where(x => x.DepartmentStudyLevelId == departmentStudyLevelId)
+            .Select(x => x.Id);
+
+        var query = _context.StudentEnrollments
+            .Where(x => departmentStudyLevelCourseIds.Contains(x.DepartmentStudyLevelCourseId))
             .Select(x => new StudentDto
             {
                 Id = x.StudentId,
@@ -104,29 +109,6 @@ public class StudentRepository : BaseRepository<Student>, IStudentRepository
 
         return BaseResponse<PagedResult<StudentDto>>.SuccessResponse("students retrieved successfully", pagedResult);
     }
-
-
-
-    public async Task<BaseResponse<PagedResult<StudentDto>>> GetStudentsByInstructor(
-        int instructorId,
-        int pageSize,
-        int pageNumber,
-        string? searchTerm)
-    {
-        //TODO:
-        throw new NotImplementedException();
-    }
-
-    public async Task<BaseResponse<PagedResult<StudentDto>>> GetStudentsByCourse(
-        int courseId,
-        int pageSize,
-        int pageNumber,
-        string? searchTerm)
-    {
-        //TODO:
-        throw new NotImplementedException();
-    }
-
 
 
     public async Task<BaseResponse<StudentDto>> GetStudentById(int id)

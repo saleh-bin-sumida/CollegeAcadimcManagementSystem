@@ -8,8 +8,6 @@ public static class SystemApiRouts
         public const string GetAll = Base;
         public const string GetByDepartment = Base + "/byDepartment/{departmentId}";
         public const string GetByDepStudyLevel = Base + "/byDepStudyLevel/{depStudyLevelId}";
-        public const string GetByInstructor = Base + "/byInstructor/{InstructorId}";
-        public const string GetByCourse = Base + "/byCourse/{courseId}";
         public const string Add = Base;
         public const string Update = Base + "/{id}";
         public const string Delete = Base + "/{id}";

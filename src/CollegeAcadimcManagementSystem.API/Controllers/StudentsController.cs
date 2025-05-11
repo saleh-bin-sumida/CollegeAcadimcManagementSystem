@@ -49,34 +49,6 @@ public class StudentsController(IUnitOfWork _unitOfWork, ILogger<StudentsControl
     }
 
 
-    [HttpGet(SystemApiRouts.Students.GetByCourse)]
-    [ProducesResponseType(typeof(BaseResponse<PagedResult<StudentDto>>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetStudentsByCourse(
-      int courseId,
-      int pageSize = 10,
-      int pageNumber = 1,
-      string? searchTerm = null)
-    {
-        var response = await _unitOfWork.Students
-            .GetStudentsByCourse(courseId, pageSize, pageNumber, searchTerm);
-        return Ok(response);
-    }
-
-
-    [HttpGet(SystemApiRouts.Students.GetByInstructor)]
-    [ProducesResponseType(typeof(BaseResponse<PagedResult<StudentDto>>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetStudentsByInstructor(
-      int instructorId,
-      int pageSize = 10,
-      int pageNumber = 1,
-      string? searchTerm = null)
-    {
-        var response = await _unitOfWork.Students
-            .GetStudentsByInstructor(instructorId, pageSize, pageNumber, searchTerm);
-        return Ok(response);
-    }
-
-
 
     [HttpGet(SystemApiRouts.Students.GetById)]
     [ProducesResponseType(typeof(BaseResponse<StudentDto>), StatusCodes.Status200OK)]

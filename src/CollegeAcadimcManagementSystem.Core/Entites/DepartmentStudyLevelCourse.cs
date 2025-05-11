@@ -8,4 +8,5 @@ public class DepartmentStudyLevelCourse
     public int DepartmentStudyLevelId { get; set; }
     public DepartmentStudyLevel DepartmentStudyLevel { get; set; }
     public ICollection<DepStudyLevelCourseInstructor> DepStudyLevelCourseInstructors = [];
+    public ICollection<StudentEnrollment> StudentEnrollments = [];
 }

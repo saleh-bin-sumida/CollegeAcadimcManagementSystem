@@ -581,16 +581,16 @@ public static class SeedData
     {
         return new List<StudentEnrollment>
         {
-            new StudentEnrollment { Id = 1, StudentId = 1, DepartmentStudyLevelId = 1 },
-            new StudentEnrollment { Id = 2, StudentId = 2, DepartmentStudyLevelId = 2 },
-            new StudentEnrollment { Id = 3, StudentId = 3, DepartmentStudyLevelId = 3 },
-            new StudentEnrollment { Id = 4, StudentId = 4, DepartmentStudyLevelId = 4 },
-            new StudentEnrollment { Id = 5, StudentId = 5, DepartmentStudyLevelId = 5 },
-            new StudentEnrollment { Id = 6, StudentId = 6, DepartmentStudyLevelId = 6 },
-            new StudentEnrollment { Id = 7, StudentId = 7, DepartmentStudyLevelId = 7 },
-            new StudentEnrollment { Id = 8, StudentId = 8, DepartmentStudyLevelId = 8 },
-            new StudentEnrollment { Id = 9, StudentId = 9, DepartmentStudyLevelId = 9 },
-            new StudentEnrollment { Id = 10, StudentId = 10, DepartmentStudyLevelId = 10 }
+            new StudentEnrollment { Id = 1, StudentId = 1, DepartmentStudyLevelCourseId = 1 },
+            new StudentEnrollment { Id = 2, StudentId = 2, DepartmentStudyLevelCourseId = 2 },
+            new StudentEnrollment { Id = 3, StudentId = 3, DepartmentStudyLevelCourseId = 3 },
+            new StudentEnrollment { Id = 4, StudentId = 4, DepartmentStudyLevelCourseId = 4 },
+            new StudentEnrollment { Id = 5, StudentId = 5, DepartmentStudyLevelCourseId = 5 },
+            new StudentEnrollment { Id = 6, StudentId = 6, DepartmentStudyLevelCourseId = 6 },
+            new StudentEnrollment { Id = 7, StudentId = 7, DepartmentStudyLevelCourseId = 7 },
+            new StudentEnrollment { Id = 8, StudentId = 8, DepartmentStudyLevelCourseId = 8 },
+            new StudentEnrollment { Id = 9, StudentId = 9, DepartmentStudyLevelCourseId = 9 },
+            new StudentEnrollment { Id = 10, StudentId = 10, DepartmentStudyLevelCourseId = 10 }
         };
     }
 }

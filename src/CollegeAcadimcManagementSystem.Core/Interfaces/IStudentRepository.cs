@@ -20,18 +20,6 @@ public interface IStudentRepository
         int pageNumber,
         string? searchTerm);
 
-    Task<BaseResponse<PagedResult<StudentDto>>> GetStudentsByInstructor(
-        int instructorId,
-        int pageSize,
-        int pageNumber,
-        string? searchTerm);
-
-
-    Task<BaseResponse<PagedResult<StudentDto>>> GetStudentsByCourse(
-        int courseId,
-        int pageSize,
-        int pageNumber,
-        string? searchTerm);
 
     Task<BaseResponse<StudentDto>> GetStudentById(int id);
 

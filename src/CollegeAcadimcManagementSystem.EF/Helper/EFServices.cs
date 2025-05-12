@@ -5,7 +5,7 @@ public static class EFServices
 
     public static string GetConnectionStringOrThrow(this IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("LocalConnection");
+        var connectionString = configuration.GetConnectionString("RemoteConnection");
 
         if (string.IsNullOrEmpty(connectionString))
             throw new InvalidOperationException($"Connection string {connectionString} is not found.");

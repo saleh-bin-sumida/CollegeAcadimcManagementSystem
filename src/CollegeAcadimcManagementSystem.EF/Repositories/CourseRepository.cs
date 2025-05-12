@@ -41,7 +41,7 @@ public class CourseRepository : BaseRepository<Course>, ICourseRepository
         var depStudyLevlsIds = _context.DepartmentStudyLevels
             .Where(x => x.DepartmentId == departmentId).Select(x => x.Id);
 
-        var courses = await _context.DepartmentStudyLevelCourses.Where(x => depStudyLevlsIds.Contains(x.DepartmentStudyLevelId))
+        var courses = await _context.OfferedCourses.Where(x => depStudyLevlsIds.Contains(x.DepartmentStudyLevelId))
             .Select(x => new CourseDto
             {
                 Id = x.CourseId,
@@ -59,11 +59,11 @@ public class CourseRepository : BaseRepository<Course>, ICourseRepository
             return BaseResponse<IEnumerable<CourseDto>>.ErrorResponse("instructor not found");
 
 
-        var courses = await _context.DepStudyLevelCourseInstructors.Where(x => x.InstructorId == instructorId)
+        var courses = await _context.CourseInstructorAssignments.Where(x => x.InstructorId == instructorId)
             .Select(x => new CourseDto
             {
-                Id = x.DepStudyLevelCourse.CourseId,
-                Title = x.DepStudyLevelCourse.Course.Title
+                Id = x.OfferedCourse.CourseId,
+                Title = x.OfferedCourse.Course.Title
             }).ToListAsync();
 
         return BaseResponse<IEnumerable<CourseDto>>.SuccessResponse("Courses retrieved successfully", courses);
@@ -72,7 +72,7 @@ public class CourseRepository : BaseRepository<Course>, ICourseRepository
     public async Task<BaseResponse<IEnumerable<CourseDto>>> GetCoursesByDepStudyLevel(int depStudyLevelId)
     {
 
-        var courses = await _context.DepartmentStudyLevelCourses
+        var courses = await _context.OfferedCourses
             .Where(x => x.DepartmentStudyLevelId == depStudyLevelId)
             .ProjectToType<CourseDto>().ToListAsync();
 

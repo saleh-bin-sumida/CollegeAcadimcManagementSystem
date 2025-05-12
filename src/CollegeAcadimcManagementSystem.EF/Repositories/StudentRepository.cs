@@ -50,13 +50,13 @@ public class StudentRepository : BaseRepository<Student>, IStudentRepository
 
 
 
-        var depStudyLevelCourseIds = _context.DepartmentStudyLevelCourses
+        var depStudyLevelCourseIds = _context.OfferedCourses
             .Where(x => depStudyLevelsIds.Contains(x.DepartmentStudyLevelId))
             .Select(x => x.Id);
 
 
         var query = _context.StudentEnrollments
-            .Where(x => depStudyLevelCourseIds.Contains(x.DepartmentStudyLevelCourseId))
+            .Where(x => depStudyLevelCourseIds.Contains(x.OfferedCourseId))
             .ProjectToType<StudentDto>();
 
 
@@ -85,12 +85,12 @@ public class StudentRepository : BaseRepository<Student>, IStudentRepository
             return BaseResponse<PagedResult<StudentDto>>.ErrorResponse("department Study Level not found");
 
 
-        var departmentStudyLevelCourseIds = _context.DepartmentStudyLevelCourses
+        var departmentStudyLevelCourseIds = _context.OfferedCourses
             .Where(x => x.DepartmentStudyLevelId == departmentStudyLevelId)
             .Select(x => x.Id);
 
         var query = _context.StudentEnrollments
-            .Where(x => departmentStudyLevelCourseIds.Contains(x.DepartmentStudyLevelCourseId))
+            .Where(x => departmentStudyLevelCourseIds.Contains(x.OfferedCourseId))
             .Select(x => new StudentDto
             {
                 Id = x.StudentId,

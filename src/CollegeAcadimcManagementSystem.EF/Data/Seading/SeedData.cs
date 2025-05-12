@@ -532,48 +532,48 @@ public static class SeedData
         };
     }
 
-    public static List<DepartmentStudyLevelCourse> SeedDepartmentStudyLevelCourses()
+    public static List<OfferedCourse> OfferedCourses()
     {
-        return new List<DepartmentStudyLevelCourse>
+        return new List<OfferedCourse>
         {
-            new DepartmentStudyLevelCourse { Id = 1, CourseId = 1, DepartmentStudyLevelId = 1 },
-            new DepartmentStudyLevelCourse { Id = 2, CourseId = 2, DepartmentStudyLevelId = 1 },
-            new DepartmentStudyLevelCourse { Id = 3, CourseId = 3, DepartmentStudyLevelId = 2 },
-            new DepartmentStudyLevelCourse { Id = 4, CourseId = 4, DepartmentStudyLevelId = 2 },
-            new DepartmentStudyLevelCourse { Id = 5, CourseId = 5, DepartmentStudyLevelId = 3 },
-            new DepartmentStudyLevelCourse { Id = 6, CourseId = 6, DepartmentStudyLevelId = 3 },
-            new DepartmentStudyLevelCourse { Id = 7, CourseId = 7, DepartmentStudyLevelId = 4 },
-            new DepartmentStudyLevelCourse { Id = 8, CourseId = 8, DepartmentStudyLevelId = 4 },
-            new DepartmentStudyLevelCourse { Id = 9, CourseId = 9, DepartmentStudyLevelId = 5 },
-            new DepartmentStudyLevelCourse { Id = 10, CourseId = 10, DepartmentStudyLevelId = 5 }
+            new OfferedCourse { Id = 1, CourseId = 1, DepartmentStudyLevelId = 1 },
+            new OfferedCourse { Id = 2, CourseId = 2, DepartmentStudyLevelId = 1 },
+            new OfferedCourse { Id = 3, CourseId = 3, DepartmentStudyLevelId = 2 },
+            new OfferedCourse { Id = 4, CourseId = 4, DepartmentStudyLevelId = 2 },
+            new OfferedCourse { Id = 5, CourseId = 5, DepartmentStudyLevelId = 3 },
+            new OfferedCourse { Id = 6, CourseId = 6, DepartmentStudyLevelId = 3 },
+            new OfferedCourse { Id = 7, CourseId = 7, DepartmentStudyLevelId = 4 },
+            new OfferedCourse { Id = 8, CourseId = 8, DepartmentStudyLevelId = 4 },
+            new OfferedCourse { Id = 9, CourseId = 9, DepartmentStudyLevelId = 5 },
+            new OfferedCourse { Id = 10, CourseId = 10, DepartmentStudyLevelId = 5 }
         };
     }
 
 
-    public static List<DepStudyLevelCourseInstructor> SeedDepStudyLevelCourseInstructors()
+    public static List<CourseInstructorAssignment> CourseInstructorAssignments()
     {
-        return new List<DepStudyLevelCourseInstructor>
+        return new List<CourseInstructorAssignment>
         {
-            new DepStudyLevelCourseInstructor { Id = 1, InstructorId = 1, DepStudyLevelCourseId = 1 },
-            new DepStudyLevelCourseInstructor { Id = 2, InstructorId = 2, DepStudyLevelCourseId = 2 },
-            new DepStudyLevelCourseInstructor { Id = 3, InstructorId = 3, DepStudyLevelCourseId = 3 },
-            new DepStudyLevelCourseInstructor { Id = 4, InstructorId = 4, DepStudyLevelCourseId = 4 },
-            new DepStudyLevelCourseInstructor { Id = 5, InstructorId = 5, DepStudyLevelCourseId = 5 },
-            new DepStudyLevelCourseInstructor { Id = 6, InstructorId = 6, DepStudyLevelCourseId = 6 },
-            new DepStudyLevelCourseInstructor { Id = 7, InstructorId = 7, DepStudyLevelCourseId = 7 },
-            new DepStudyLevelCourseInstructor { Id = 8, InstructorId = 8, DepStudyLevelCourseId = 8 },
-            new DepStudyLevelCourseInstructor { Id = 9, InstructorId = 9, DepStudyLevelCourseId = 9 },
-            new DepStudyLevelCourseInstructor { Id = 10, InstructorId = 10, DepStudyLevelCourseId = 10 },
-            new DepStudyLevelCourseInstructor { Id = 11, InstructorId = 11, DepStudyLevelCourseId = 1 },
-            new DepStudyLevelCourseInstructor { Id = 12, InstructorId = 12, DepStudyLevelCourseId = 2 },
-            new DepStudyLevelCourseInstructor { Id = 13, InstructorId = 13, DepStudyLevelCourseId = 3 },
-            new DepStudyLevelCourseInstructor { Id = 14, InstructorId = 14, DepStudyLevelCourseId = 4 },
-            new DepStudyLevelCourseInstructor { Id = 15, InstructorId = 15, DepStudyLevelCourseId = 5 },
-            new DepStudyLevelCourseInstructor { Id = 16, InstructorId = 16, DepStudyLevelCourseId = 6 },
-            new DepStudyLevelCourseInstructor { Id = 17, InstructorId = 17, DepStudyLevelCourseId = 7 },
-            new DepStudyLevelCourseInstructor { Id = 18, InstructorId = 18, DepStudyLevelCourseId = 8 },
-            new DepStudyLevelCourseInstructor { Id = 19, InstructorId = 19, DepStudyLevelCourseId = 9 },
-            new DepStudyLevelCourseInstructor { Id = 20, InstructorId = 20, DepStudyLevelCourseId = 10 }
+            new CourseInstructorAssignment { Id = 1, InstructorId = 1, OfferedCourseId = 1 },
+            new CourseInstructorAssignment { Id = 2, InstructorId = 2, OfferedCourseId = 2 },
+            new CourseInstructorAssignment { Id = 3, InstructorId = 3, OfferedCourseId = 3 },
+            new CourseInstructorAssignment { Id = 4, InstructorId = 4, OfferedCourseId = 4 },
+            new CourseInstructorAssignment { Id = 5, InstructorId = 5, OfferedCourseId = 5 },
+            new CourseInstructorAssignment { Id = 6, InstructorId = 6, OfferedCourseId = 6 },
+            new CourseInstructorAssignment { Id = 7, InstructorId = 7, OfferedCourseId = 7 },
+            new CourseInstructorAssignment { Id = 8, InstructorId = 8, OfferedCourseId = 8 },
+            new CourseInstructorAssignment { Id = 9, InstructorId = 9, OfferedCourseId = 9 },
+            new CourseInstructorAssignment { Id = 10, InstructorId = 10, OfferedCourseId = 10 },
+            new CourseInstructorAssignment { Id = 11, InstructorId = 11, OfferedCourseId = 1 },
+            new CourseInstructorAssignment { Id = 12, InstructorId = 12, OfferedCourseId = 2 },
+            new CourseInstructorAssignment { Id = 13, InstructorId = 13, OfferedCourseId = 3 },
+            new CourseInstructorAssignment { Id = 14, InstructorId = 14, OfferedCourseId = 4 },
+            new CourseInstructorAssignment { Id = 15, InstructorId = 15, OfferedCourseId = 5 },
+            new CourseInstructorAssignment { Id = 16, InstructorId = 16, OfferedCourseId = 6 },
+            new CourseInstructorAssignment { Id = 17, InstructorId = 17, OfferedCourseId = 7 },
+            new CourseInstructorAssignment { Id = 18, InstructorId = 18, OfferedCourseId = 8 },
+            new CourseInstructorAssignment { Id = 19, InstructorId = 19, OfferedCourseId = 9 },
+            new CourseInstructorAssignment { Id = 20, InstructorId = 20, OfferedCourseId = 10 }
         };
     }
 
@@ -581,16 +581,16 @@ public static class SeedData
     {
         return new List<StudentEnrollment>
         {
-            new StudentEnrollment { Id = 1, StudentId = 1, DepartmentStudyLevelCourseId = 1 },
-            new StudentEnrollment { Id = 2, StudentId = 2, DepartmentStudyLevelCourseId = 2 },
-            new StudentEnrollment { Id = 3, StudentId = 3, DepartmentStudyLevelCourseId = 3 },
-            new StudentEnrollment { Id = 4, StudentId = 4, DepartmentStudyLevelCourseId = 4 },
-            new StudentEnrollment { Id = 5, StudentId = 5, DepartmentStudyLevelCourseId = 5 },
-            new StudentEnrollment { Id = 6, StudentId = 6, DepartmentStudyLevelCourseId = 6 },
-            new StudentEnrollment { Id = 7, StudentId = 7, DepartmentStudyLevelCourseId = 7 },
-            new StudentEnrollment { Id = 8, StudentId = 8, DepartmentStudyLevelCourseId = 8 },
-            new StudentEnrollment { Id = 9, StudentId = 9, DepartmentStudyLevelCourseId = 9 },
-            new StudentEnrollment { Id = 10, StudentId = 10, DepartmentStudyLevelCourseId = 10 }
+            new StudentEnrollment { Id = 1, StudentId = 1, OfferedCourseId = 1, Grade = 85.5f, Date = new DateOnly(2023, 10, 1) },
+            new StudentEnrollment { Id = 2, StudentId = 2, OfferedCourseId = 2, Grade = 90.0f, Date = new DateOnly(2023, 10, 2) },
+            new StudentEnrollment { Id = 3, StudentId = 3, OfferedCourseId = 3, Grade = 78.0f, Date = new DateOnly(2023, 10, 3) },
+            new StudentEnrollment { Id = 4, StudentId = 4, OfferedCourseId = 4, Grade = 88.0f, Date = new DateOnly(2023, 10, 4) },
+            new StudentEnrollment { Id = 5, StudentId = 5, OfferedCourseId = 5, Grade = 92.0f, Date = new DateOnly(2023, 10, 5) },
+            new StudentEnrollment { Id = 6, StudentId = 6, OfferedCourseId = 6, Grade = 80.0f, Date = new DateOnly(2023, 10, 6) },
+            new StudentEnrollment { Id = 7, StudentId = 7, OfferedCourseId = 7, Grade = 75.0f, Date = new DateOnly(2023, 10, 7) },
+            new StudentEnrollment { Id = 8, StudentId = 8, OfferedCourseId = 8, Grade = 89.0f, Date = new DateOnly(2023, 10, 8) },
+            new StudentEnrollment { Id = 9, StudentId = 9, OfferedCourseId = 9, Grade = 95.0f, Date = new DateOnly(2023, 10, 9) },
+            new StudentEnrollment { Id = 10, StudentId = 10, OfferedCourseId = 10, Grade = 85.0f, Date = new DateOnly(2023, 10, 10) }
         };
     }
 }

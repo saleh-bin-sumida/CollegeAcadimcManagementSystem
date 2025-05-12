@@ -9,5 +9,5 @@ public class Course : IEntity, ISoftDeletable
     public DateTime? ModifiedDate { get; set; }
     public DateTime? DeletedDate { get; set; }
 
-    public ICollection<DepartmentStudyLevelCourse> DepartmentStudyLevelCourses { get; set; } = new List<DepartmentStudyLevelCourse>();
+    public ICollection<OfferedCourse> OfferedCourses { get; set; } = new List<OfferedCourse>();
 }

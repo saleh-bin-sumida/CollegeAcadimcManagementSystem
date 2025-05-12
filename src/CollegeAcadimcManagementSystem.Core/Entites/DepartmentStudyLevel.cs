@@ -9,7 +9,7 @@ public class DepartmentStudyLevel
     public int StudyLevelId { get; set; }
     public StudyLevel StudyLevel { get; set; }
 
-    public ICollection<DepartmentStudyLevelCourse> DepartmentStudyLevelCourses { get; set; } = new List<DepartmentStudyLevelCourse>();
+    public ICollection<OfferedCourse> OfferedCourses { get; set; } = new List<OfferedCourse>();
 }
 
 

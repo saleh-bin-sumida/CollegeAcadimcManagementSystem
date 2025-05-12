@@ -2,6 +2,7 @@
 
 public static class EFServices
 {
+
     public static string GetConnectionStringOrThrow(this IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("LocalConnection");

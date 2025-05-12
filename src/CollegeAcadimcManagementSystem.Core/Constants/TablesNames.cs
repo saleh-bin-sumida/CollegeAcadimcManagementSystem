@@ -8,7 +8,7 @@ public static class TablesNames
     public const string StudyLevels = "StudyLevels";
     public const string Courses = "Courses";
     public const string DepartmentStudyLevels = "DepartmentStudyLevels";
-    public const string DepStudyLevelCourses = "DepartmentStudyLevelCourses";
-    public const string DepStudyLevelCourseInstructors = "DepStudyLevelCourseInstructors";
+    public const string OfferedCourses = "OfferedCourses";
+    public const string CourseInstructorAssignments = "CourseInstructorAssignments";
     public const string StudentEnrollments = "StudentEnrollments";
 }

@@ -11,8 +11,8 @@ public class AppDbContext : DbContext
     public DbSet<Department> Departments { get; set; }
     public DbSet<StudyLevel> StudyLevels { get; set; }
     public DbSet<DepartmentStudyLevel> DepartmentStudyLevels { get; set; }
-    public DbSet<DepartmentStudyLevelCourse> DepartmentStudyLevelCourses { get; set; }
-    public DbSet<DepStudyLevelCourseInstructor> DepStudyLevelCourseInstructors { get; set; }
+    public DbSet<OfferedCourse> OfferedCourses { get; set; }
+    public DbSet<CourseInstructorAssignment> CourseInstructorAssignments { get; set; }
     public DbSet<Course> Courses { get; set; }
     public DbSet<StudentEnrollment> StudentEnrollments { get; set; }
 

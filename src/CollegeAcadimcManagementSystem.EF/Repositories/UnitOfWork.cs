@@ -1,4 +1,6 @@
-﻿namespace CollegeAcadimcManagementSystem.EF.Repositories;
+﻿
+
+namespace CollegeAcadimcManagementSystem.EF.Repositories;
 
 public class UnitOfWork : IUnitOfWork
 {
@@ -11,6 +13,7 @@ public class UnitOfWork : IUnitOfWork
     private IStudyLevelRepository? _studyLevelRepository;
     private ICourseRepository? _courseRepository;
     private IDepartmentStudyLevelRepo? _departmentStudyLevelRepository;
+    private IStudentEnrollmentRepository? _studentEnrollmentRepository;
 
     public UnitOfWork(AppDbContext context, IServiceProvider serviceProvider)
     {
@@ -34,8 +37,10 @@ public class UnitOfWork : IUnitOfWork
         new CourseRepository(_context, _serviceProvider.GetRequiredService<ILogger<CourseRepository>>());
 
     public IDepartmentStudyLevelRepo DepartmentStudyLevels => _departmentStudyLevelRepository ??=
-    new DepartmentStudyLevelRepo(_context, _serviceProvider.GetRequiredService<ILogger<DepartmentStudyLevelRepo>>());
+        new DepartmentStudyLevelRepo(_context, _serviceProvider.GetRequiredService<ILogger<DepartmentStudyLevelRepo>>());
 
+    public IStudentEnrollmentRepository StudentEnrollments => _studentEnrollmentRepository ??=
+        new StudentEnrollmentRepository(_context, _serviceProvider.GetRequiredService<ILogger<StudentEnrollmentRepository>>());
 
     public void Dispose()
     {

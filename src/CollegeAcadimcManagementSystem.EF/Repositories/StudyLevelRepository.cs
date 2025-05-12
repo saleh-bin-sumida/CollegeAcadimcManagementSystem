@@ -62,7 +62,7 @@ public class StudyLevelRepository : BaseRepository<StudyLevel>, IStudyLevelRepos
         if (!await _context.Courses.AnyAsync(x => x.Id == courseId))
             return BaseResponse<List<StudyLevelDto>>.ErrorResponse("course not found");
 
-        var studyLevels = await _context.DepartmentStudyLevelCourses.Where(x => x.CourseId == courseId)
+        var studyLevels = await _context.OfferedCourses.Where(x => x.CourseId == courseId)
             .Select(x => x.DepartmentStudyLevel.StudyLevel).Distinct()
             .Select(x => new StudyLevelDto
             {

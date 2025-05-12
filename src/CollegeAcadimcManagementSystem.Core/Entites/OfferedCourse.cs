@@ -1,12 +1,14 @@
 namespace CollegeAcadimcManagementSystem.Core.Entites;
 
-public class DepartmentStudyLevelCourse
+public class OfferedCourse
 {
     public int Id { get; set; }
     public int CourseId { get; set; }
     public Course Course { get; set; }
     public int DepartmentStudyLevelId { get; set; }
     public DepartmentStudyLevel DepartmentStudyLevel { get; set; }
-    public ICollection<DepStudyLevelCourseInstructor> DepStudyLevelCourseInstructors = [];
+
+
+    public ICollection<CourseInstructorAssignment> CourseInstructorAssignments = [];
     public ICollection<StudentEnrollment> StudentEnrollments = [];
 }

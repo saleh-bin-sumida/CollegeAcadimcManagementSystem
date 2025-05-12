@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>CollegeAcadimcManagementSystem.API</RootNamespace>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <UserSecretsId>e3b9ae6f-1e0c-4c87-a57f-ef5bea31b628</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

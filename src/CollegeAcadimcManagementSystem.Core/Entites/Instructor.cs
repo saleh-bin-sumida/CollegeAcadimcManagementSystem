@@ -13,6 +13,6 @@ public class Instructor : IEntity, ISoftDeletable
     public DateTime? DeletedDate { get; set; }
 
 
-    public ICollection<DepStudyLevelCourseInstructor> DepStudyLevelCourseInstructors = [];
+    public ICollection<CourseInstructorAssignment> CourseInstructorAssignments = [];
 
 }

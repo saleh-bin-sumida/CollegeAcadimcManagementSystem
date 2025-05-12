@@ -12,9 +12,9 @@ internal class StudentEnrollmentConfiguration : IEntityTypeConfiguration<Student
             .WithMany(x => x.StudentEnrollments)
             .HasForeignKey(se => se.StudentId);
 
-        builder.HasOne(se => se.DepartmentStudyLevelCourse)
+        builder.HasOne(se => se.OfferedCourses)
             .WithMany(x => x.StudentEnrollments)
-            .HasForeignKey(se => se.DepartmentStudyLevelCourseId);
+            .HasForeignKey(se => se.OfferedCourseId);
         builder.HasData(SeedData.SeedStudentEnrollments());
     }
 }

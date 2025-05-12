@@ -17,7 +17,7 @@ public class DepartmentStudyLevelRepo : BaseRepository<DepartmentStudyLevel>, ID
         if (!await _context.Courses.AnyAsync(x => x.Id == courseId))
             return BaseResponse<List<DepartmentStudyLevelDto>>.ErrorResponse("course not found");
 
-        var depStudyLevels = await _context.DepartmentStudyLevelCourses.Where(x => x.CourseId == courseId)
+        var depStudyLevels = await _context.OfferedCourses.Where(x => x.CourseId == courseId)
             .Select(x => x.DepartmentStudyLevel).ProjectToType<DepartmentStudyLevelDto>().ToListAsync();
 
         return BaseResponse<List<DepartmentStudyLevelDto>>.SuccessResponse("Department StudyLevels retrieved successfully", depStudyLevels);

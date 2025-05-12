@@ -68,7 +68,7 @@ public class StudentsController(IUnitOfWork _unitOfWork, ILogger<StudentsControl
     [HttpPost(SystemApiRouts.Students.Add)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BaseResponse<string>), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> CreateStudent(AddStudentDto studentDto)
+    public async Task<IActionResult> AddStudent(AddStudentDto studentDto)
     {
         var response = await _unitOfWork.Students.AddStudentAsync(studentDto);
         if (!response.Success)

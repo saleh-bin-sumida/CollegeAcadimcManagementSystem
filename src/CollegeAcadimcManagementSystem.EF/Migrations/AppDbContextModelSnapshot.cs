@@ -124,7 +124,7 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                         });
                 });
 
-            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.DepStudyLevelCourseInstructor", b =>
+            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.CourseInstructorAssignment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -132,140 +132,140 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DepStudyLevelCourseId")
+                    b.Property<int>("InstructorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("InstructorId")
+                    b.Property<int>("OfferedCourseId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepStudyLevelCourseId");
-
                     b.HasIndex("InstructorId");
 
-                    b.ToTable("DepStudyLevelCourseInstructors", (string)null);
+                    b.HasIndex("OfferedCourseId");
+
+                    b.ToTable("CourseInstructorAssignments", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            DepStudyLevelCourseId = 1,
-                            InstructorId = 1
+                            InstructorId = 1,
+                            OfferedCourseId = 1
                         },
                         new
                         {
                             Id = 2,
-                            DepStudyLevelCourseId = 2,
-                            InstructorId = 2
+                            InstructorId = 2,
+                            OfferedCourseId = 2
                         },
                         new
                         {
                             Id = 3,
-                            DepStudyLevelCourseId = 3,
-                            InstructorId = 3
+                            InstructorId = 3,
+                            OfferedCourseId = 3
                         },
                         new
                         {
                             Id = 4,
-                            DepStudyLevelCourseId = 4,
-                            InstructorId = 4
+                            InstructorId = 4,
+                            OfferedCourseId = 4
                         },
                         new
                         {
                             Id = 5,
-                            DepStudyLevelCourseId = 5,
-                            InstructorId = 5
+                            InstructorId = 5,
+                            OfferedCourseId = 5
                         },
                         new
                         {
                             Id = 6,
-                            DepStudyLevelCourseId = 6,
-                            InstructorId = 6
+                            InstructorId = 6,
+                            OfferedCourseId = 6
                         },
                         new
                         {
                             Id = 7,
-                            DepStudyLevelCourseId = 7,
-                            InstructorId = 7
+                            InstructorId = 7,
+                            OfferedCourseId = 7
                         },
                         new
                         {
                             Id = 8,
-                            DepStudyLevelCourseId = 8,
-                            InstructorId = 8
+                            InstructorId = 8,
+                            OfferedCourseId = 8
                         },
                         new
                         {
                             Id = 9,
-                            DepStudyLevelCourseId = 9,
-                            InstructorId = 9
+                            InstructorId = 9,
+                            OfferedCourseId = 9
                         },
                         new
                         {
                             Id = 10,
-                            DepStudyLevelCourseId = 10,
-                            InstructorId = 10
+                            InstructorId = 10,
+                            OfferedCourseId = 10
                         },
                         new
                         {
                             Id = 11,
-                            DepStudyLevelCourseId = 1,
-                            InstructorId = 11
+                            InstructorId = 11,
+                            OfferedCourseId = 1
                         },
                         new
                         {
                             Id = 12,
-                            DepStudyLevelCourseId = 2,
-                            InstructorId = 12
+                            InstructorId = 12,
+                            OfferedCourseId = 2
                         },
                         new
                         {
                             Id = 13,
-                            DepStudyLevelCourseId = 3,
-                            InstructorId = 13
+                            InstructorId = 13,
+                            OfferedCourseId = 3
                         },
                         new
                         {
                             Id = 14,
-                            DepStudyLevelCourseId = 4,
-                            InstructorId = 14
+                            InstructorId = 14,
+                            OfferedCourseId = 4
                         },
                         new
                         {
                             Id = 15,
-                            DepStudyLevelCourseId = 5,
-                            InstructorId = 15
+                            InstructorId = 15,
+                            OfferedCourseId = 5
                         },
                         new
                         {
                             Id = 16,
-                            DepStudyLevelCourseId = 6,
-                            InstructorId = 16
+                            InstructorId = 16,
+                            OfferedCourseId = 6
                         },
                         new
                         {
                             Id = 17,
-                            DepStudyLevelCourseId = 7,
-                            InstructorId = 17
+                            InstructorId = 17,
+                            OfferedCourseId = 7
                         },
                         new
                         {
                             Id = 18,
-                            DepStudyLevelCourseId = 8,
-                            InstructorId = 18
+                            InstructorId = 18,
+                            OfferedCourseId = 8
                         },
                         new
                         {
                             Id = 19,
-                            DepStudyLevelCourseId = 9,
-                            InstructorId = 19
+                            InstructorId = 19,
+                            OfferedCourseId = 9
                         },
                         new
                         {
                             Id = 20,
-                            DepStudyLevelCourseId = 10,
-                            InstructorId = 20
+                            InstructorId = 20,
+                            OfferedCourseId = 10
                         });
                 });
 
@@ -424,91 +424,6 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                             Id = 12,
                             DepartmentId = 3,
                             StudyLevelId = 6
-                        });
-                });
-
-            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.DepartmentStudyLevelCourse", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DepartmentStudyLevelId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CourseId");
-
-                    b.HasIndex("DepartmentStudyLevelId");
-
-                    b.ToTable("DepartmentStudyLevelCourses", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CourseId = 1,
-                            DepartmentStudyLevelId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CourseId = 2,
-                            DepartmentStudyLevelId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CourseId = 3,
-                            DepartmentStudyLevelId = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CourseId = 4,
-                            DepartmentStudyLevelId = 2
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CourseId = 5,
-                            DepartmentStudyLevelId = 3
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CourseId = 6,
-                            DepartmentStudyLevelId = 3
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CourseId = 7,
-                            DepartmentStudyLevelId = 4
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CourseId = 8,
-                            DepartmentStudyLevelId = 4
-                        },
-                        new
-                        {
-                            Id = 9,
-                            CourseId = 9,
-                            DepartmentStudyLevelId = 5
-                        },
-                        new
-                        {
-                            Id = 10,
-                            CourseId = 10,
-                            DepartmentStudyLevelId = 5
                         });
                 });
 
@@ -756,6 +671,91 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                             IsDeleted = false,
                             LastName = "نور محمد",
                             PhoneNumber = "0874900112"
+                        });
+                });
+
+            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.OfferedCourse", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DepartmentStudyLevelId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("DepartmentStudyLevelId");
+
+                    b.ToTable("OfferedCourses", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CourseId = 1,
+                            DepartmentStudyLevelId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CourseId = 2,
+                            DepartmentStudyLevelId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CourseId = 3,
+                            DepartmentStudyLevelId = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CourseId = 4,
+                            DepartmentStudyLevelId = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CourseId = 5,
+                            DepartmentStudyLevelId = 3
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CourseId = 6,
+                            DepartmentStudyLevelId = 3
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CourseId = 7,
+                            DepartmentStudyLevelId = 4
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CourseId = 8,
+                            DepartmentStudyLevelId = 4
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CourseId = 9,
+                            DepartmentStudyLevelId = 5
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CourseId = 10,
+                            DepartmentStudyLevelId = 5
                         });
                 });
 
@@ -1014,7 +1014,13 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DepartmentStudyLevelCourseId")
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("date");
+
+                    b.Property<float>("Grade")
+                        .HasColumnType("real");
+
+                    b.Property<int>("OfferedCourseId")
                         .HasColumnType("int");
 
                     b.Property<int>("StudentId")
@@ -1022,7 +1028,7 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentStudyLevelCourseId");
+                    b.HasIndex("OfferedCourseId");
 
                     b.HasIndex("StudentId");
 
@@ -1032,61 +1038,81 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                         new
                         {
                             Id = 1,
-                            DepartmentStudyLevelCourseId = 1,
+                            Date = new DateOnly(2023, 10, 1),
+                            Grade = 85.5f,
+                            OfferedCourseId = 1,
                             StudentId = 1
                         },
                         new
                         {
                             Id = 2,
-                            DepartmentStudyLevelCourseId = 2,
+                            Date = new DateOnly(2023, 10, 2),
+                            Grade = 90f,
+                            OfferedCourseId = 2,
                             StudentId = 2
                         },
                         new
                         {
                             Id = 3,
-                            DepartmentStudyLevelCourseId = 3,
+                            Date = new DateOnly(2023, 10, 3),
+                            Grade = 78f,
+                            OfferedCourseId = 3,
                             StudentId = 3
                         },
                         new
                         {
                             Id = 4,
-                            DepartmentStudyLevelCourseId = 4,
+                            Date = new DateOnly(2023, 10, 4),
+                            Grade = 88f,
+                            OfferedCourseId = 4,
                             StudentId = 4
                         },
                         new
                         {
                             Id = 5,
-                            DepartmentStudyLevelCourseId = 5,
+                            Date = new DateOnly(2023, 10, 5),
+                            Grade = 92f,
+                            OfferedCourseId = 5,
                             StudentId = 5
                         },
                         new
                         {
                             Id = 6,
-                            DepartmentStudyLevelCourseId = 6,
+                            Date = new DateOnly(2023, 10, 6),
+                            Grade = 80f,
+                            OfferedCourseId = 6,
                             StudentId = 6
                         },
                         new
                         {
                             Id = 7,
-                            DepartmentStudyLevelCourseId = 7,
+                            Date = new DateOnly(2023, 10, 7),
+                            Grade = 75f,
+                            OfferedCourseId = 7,
                             StudentId = 7
                         },
                         new
                         {
                             Id = 8,
-                            DepartmentStudyLevelCourseId = 8,
+                            Date = new DateOnly(2023, 10, 8),
+                            Grade = 89f,
+                            OfferedCourseId = 8,
                             StudentId = 8
                         },
                         new
                         {
                             Id = 9,
-                            DepartmentStudyLevelCourseId = 9,
+                            Date = new DateOnly(2023, 10, 9),
+                            Grade = 95f,
+                            OfferedCourseId = 9,
                             StudentId = 9
                         },
                         new
                         {
                             Id = 10,
-                            DepartmentStudyLevelCourseId = 10,
+                            Date = new DateOnly(2023, 10, 10),
+                            Grade = 85f,
+                            OfferedCourseId = 10,
                             StudentId = 10
                         });
                 });
@@ -1165,23 +1191,23 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                         });
                 });
 
-            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.DepStudyLevelCourseInstructor", b =>
+            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.CourseInstructorAssignment", b =>
                 {
-                    b.HasOne("CollegeAcadimcManagementSystem.Core.Entites.DepartmentStudyLevelCourse", "DepStudyLevelCourse")
-                        .WithMany("DepStudyLevelCourseInstructors")
-                        .HasForeignKey("DepStudyLevelCourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("CollegeAcadimcManagementSystem.Core.Entites.Instructor", "Instructor")
-                        .WithMany("DepStudyLevelCourseInstructors")
+                        .WithMany("CourseInstructorAssignments")
                         .HasForeignKey("InstructorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("DepStudyLevelCourse");
+                    b.HasOne("CollegeAcadimcManagementSystem.Core.Entites.OfferedCourse", "OfferedCourse")
+                        .WithMany("CourseInstructorAssignments")
+                        .HasForeignKey("OfferedCourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Instructor");
+
+                    b.Navigation("OfferedCourse");
                 });
 
             modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.DepartmentStudyLevel", b =>
@@ -1203,16 +1229,16 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                     b.Navigation("StudyLevel");
                 });
 
-            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.DepartmentStudyLevelCourse", b =>
+            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.OfferedCourse", b =>
                 {
                     b.HasOne("CollegeAcadimcManagementSystem.Core.Entites.Course", "Course")
-                        .WithMany("DepartmentStudyLevelCourses")
+                        .WithMany("OfferedCourses")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("CollegeAcadimcManagementSystem.Core.Entites.DepartmentStudyLevel", "DepartmentStudyLevel")
-                        .WithMany("DepartmentStudyLevelCourses")
+                        .WithMany("OfferedCourses")
                         .HasForeignKey("DepartmentStudyLevelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1224,9 +1250,9 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
 
             modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.StudentEnrollment", b =>
                 {
-                    b.HasOne("CollegeAcadimcManagementSystem.Core.Entites.DepartmentStudyLevelCourse", "DepartmentStudyLevelCourse")
+                    b.HasOne("CollegeAcadimcManagementSystem.Core.Entites.OfferedCourse", "OfferedCourses")
                         .WithMany("StudentEnrollments")
-                        .HasForeignKey("DepartmentStudyLevelCourseId")
+                        .HasForeignKey("OfferedCourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1236,14 +1262,14 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("DepartmentStudyLevelCourse");
+                    b.Navigation("OfferedCourses");
 
                     b.Navigation("Student");
                 });
 
             modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.Course", b =>
                 {
-                    b.Navigation("DepartmentStudyLevelCourses");
+                    b.Navigation("OfferedCourses");
                 });
 
             modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.Department", b =>
@@ -1253,19 +1279,19 @@ namespace CollegeAcadimcManagementSystem.EF.Migrations
 
             modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.DepartmentStudyLevel", b =>
                 {
-                    b.Navigation("DepartmentStudyLevelCourses");
-                });
-
-            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.DepartmentStudyLevelCourse", b =>
-                {
-                    b.Navigation("DepStudyLevelCourseInstructors");
-
-                    b.Navigation("StudentEnrollments");
+                    b.Navigation("OfferedCourses");
                 });
 
             modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.Instructor", b =>
                 {
-                    b.Navigation("DepStudyLevelCourseInstructors");
+                    b.Navigation("CourseInstructorAssignments");
+                });
+
+            modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.OfferedCourse", b =>
+                {
+                    b.Navigation("CourseInstructorAssignments");
+
+                    b.Navigation("StudentEnrollments");
                 });
 
             modelBuilder.Entity("CollegeAcadimcManagementSystem.Core.Entites.Student", b =>

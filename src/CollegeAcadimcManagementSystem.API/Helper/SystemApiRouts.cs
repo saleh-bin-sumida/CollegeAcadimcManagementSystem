@@ -75,4 +75,13 @@ public static class SystemApiRouts
         public const string GetByDepStudyLevel = Base + "/byDepStudyLevel/{depStudyLevelId}";
         public const string GetByOfferedCourse = Base + "/byOfferedCourse/{offeredCourseId}";
     }
+
+    public static class CourseInstructorAssignments
+    {
+        public const string Base = "api/v1/courseinstructorassignments";
+        public const string GetAll = Base;
+        public const string GetById = Base + "/{id}";
+        public const string GetbyInstructor = Base + "/byInstructor/{instructorId}";
+        public const string GetbyOfferedCourse = Base + "/byOfferedCourse/{offeredCourseId}";
+    }
 }

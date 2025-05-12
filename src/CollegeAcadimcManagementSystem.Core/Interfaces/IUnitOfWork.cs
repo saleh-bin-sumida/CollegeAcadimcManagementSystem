@@ -9,6 +9,7 @@ public interface IUnitOfWork : IDisposable
     ICourseRepository Courses { get; }
     IDepartmentStudyLevelRepo DepartmentStudyLevels { get; }
     IStudentEnrollmentRepository StudentEnrollments { get; }
+    ICourseInstructorAssignmentRepository CourseInstructorAssignments { get; } // Added
     Task<int> SaveAsync();
 }
 

@@ -31,6 +31,11 @@ namespace CollegeAcadimcManagementSystem.Core.Mapping
                  .Map(dest => dest.Email, src => src.Student.Email)
                  .Map(dest => dest.PhoneNumber, src => src.Student.PhoneNumber);
 
+
+            TypeAdapterConfig<CourseInstructorAssignment, CourseInstructorAssignmentDto>.NewConfig()
+               .Map(dest => dest.InstructorName, src => $"{src.Instructor.FirstName} {src.Instructor.LastName}")
+               .Map(dest => dest.OfferedCourseName, src => src.OfferedCourse.Course.Title);
+
         }
     }
 }

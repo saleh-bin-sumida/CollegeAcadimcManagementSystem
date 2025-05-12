@@ -554,26 +554,26 @@ public static class SeedData
     {
         return new List<CourseInstructorAssignment>
         {
-            new CourseInstructorAssignment { Id = 1, InstructorId = 1, OfferedCourseId = 1 },
-            new CourseInstructorAssignment { Id = 2, InstructorId = 2, OfferedCourseId = 2 },
-            new CourseInstructorAssignment { Id = 3, InstructorId = 3, OfferedCourseId = 3 },
-            new CourseInstructorAssignment { Id = 4, InstructorId = 4, OfferedCourseId = 4 },
-            new CourseInstructorAssignment { Id = 5, InstructorId = 5, OfferedCourseId = 5 },
-            new CourseInstructorAssignment { Id = 6, InstructorId = 6, OfferedCourseId = 6 },
-            new CourseInstructorAssignment { Id = 7, InstructorId = 7, OfferedCourseId = 7 },
-            new CourseInstructorAssignment { Id = 8, InstructorId = 8, OfferedCourseId = 8 },
-            new CourseInstructorAssignment { Id = 9, InstructorId = 9, OfferedCourseId = 9 },
-            new CourseInstructorAssignment { Id = 10, InstructorId = 10, OfferedCourseId = 10 },
-            new CourseInstructorAssignment { Id = 11, InstructorId = 11, OfferedCourseId = 1 },
-            new CourseInstructorAssignment { Id = 12, InstructorId = 12, OfferedCourseId = 2 },
-            new CourseInstructorAssignment { Id = 13, InstructorId = 13, OfferedCourseId = 3 },
-            new CourseInstructorAssignment { Id = 14, InstructorId = 14, OfferedCourseId = 4 },
-            new CourseInstructorAssignment { Id = 15, InstructorId = 15, OfferedCourseId = 5 },
-            new CourseInstructorAssignment { Id = 16, InstructorId = 16, OfferedCourseId = 6 },
-            new CourseInstructorAssignment { Id = 17, InstructorId = 17, OfferedCourseId = 7 },
-            new CourseInstructorAssignment { Id = 18, InstructorId = 18, OfferedCourseId = 8 },
-            new CourseInstructorAssignment { Id = 19, InstructorId = 19, OfferedCourseId = 9 },
-            new CourseInstructorAssignment { Id = 20, InstructorId = 20, OfferedCourseId = 10 }
+            new CourseInstructorAssignment { Id = 1, InstructorId = 1, OfferedCourseId = 1, Date = new DateOnly(2023, 10, 1) },
+            new CourseInstructorAssignment { Id = 2, InstructorId = 2, OfferedCourseId = 2, Date = new DateOnly(2023, 10, 2) },
+            new CourseInstructorAssignment { Id = 3, InstructorId = 3, OfferedCourseId = 3, Date = new DateOnly(2023, 10, 3) },
+            new CourseInstructorAssignment { Id = 4, InstructorId = 4, OfferedCourseId = 4, Date = new DateOnly(2023, 10, 4) },
+            new CourseInstructorAssignment { Id = 5, InstructorId = 5, OfferedCourseId = 5, Date = new DateOnly(2023, 10, 5) },
+            new CourseInstructorAssignment { Id = 6, InstructorId = 6, OfferedCourseId = 6, Date = new DateOnly(2023, 10, 6) },
+            new CourseInstructorAssignment { Id = 7, InstructorId = 7, OfferedCourseId = 7, Date = new DateOnly(2023, 10, 7) },
+            new CourseInstructorAssignment { Id = 8, InstructorId = 8, OfferedCourseId = 8, Date = new DateOnly(2023, 10, 8) },
+            new CourseInstructorAssignment { Id = 9, InstructorId = 9, OfferedCourseId = 9, Date = new DateOnly(2023, 10, 9) },
+            new CourseInstructorAssignment { Id = 10, InstructorId = 10, OfferedCourseId = 10, Date = new DateOnly(2023, 10, 10) },
+            new CourseInstructorAssignment { Id = 11, InstructorId = 11, OfferedCourseId = 1, Date = new DateOnly(2023, 10, 11) },
+            new CourseInstructorAssignment { Id = 12, InstructorId = 12, OfferedCourseId = 2, Date = new DateOnly(2023, 10, 12) },
+            new CourseInstructorAssignment { Id = 13, InstructorId = 13, OfferedCourseId = 3, Date = new DateOnly(2023, 10, 13) },
+            new CourseInstructorAssignment { Id = 14, InstructorId = 14, OfferedCourseId = 4, Date = new DateOnly(2023, 10, 14) },
+            new CourseInstructorAssignment { Id = 15, InstructorId = 15, OfferedCourseId = 5, Date = new DateOnly(2023, 10, 15) },
+            new CourseInstructorAssignment { Id = 16, InstructorId = 16, OfferedCourseId = 6, Date = new DateOnly(2023, 10, 16) },
+            new CourseInstructorAssignment { Id = 17, InstructorId = 17, OfferedCourseId = 7, Date = new DateOnly(2023, 10, 17) },
+            new CourseInstructorAssignment { Id = 18, InstructorId = 18, OfferedCourseId = 8, Date = new DateOnly(2023, 10, 18) },
+            new CourseInstructorAssignment { Id = 19, InstructorId = 19, OfferedCourseId = 9, Date = new DateOnly(2023, 10, 19) },
+            new CourseInstructorAssignment { Id = 20, InstructorId = 20, OfferedCourseId = 10, Date = new DateOnly(2023, 10, 20) }
         };
     }
 

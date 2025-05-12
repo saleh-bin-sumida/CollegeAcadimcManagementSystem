@@ -6,12 +6,15 @@ The **College Academic Management System API** is a comprehensive solution for m
 
 ## Table of Contents
 1. [Overview](#overview)
-2. [Entities](#entities)
-3. [Controllers](#controllers)
-4. [Endpoints](#endpoints)
-5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
+2. [Technologies Used](#technologies-used)
+3. [Design Patterns Used](#design-patterns-used)
+4. [Entities](#entities)
+5. [Controllers](#controllers)
+6. [Endpoints](#endpoints)
+7. [Usage](#usage)
+8. [Contributing](#contributing)
+9. [License](#license)
+
 
 ---
 
@@ -35,6 +38,31 @@ The API is deployed and accessible at: [College Academic Management System](http
 
 
 ---
+
+## Technologies Used
+
+- **.NET 9**: Modern, high-performance, cross-platform framework for building APIs.
+- **ASP.NET Core**: For building the RESTful API and web application structure.
+- **Entity Framework Core**: ORM for database access and management.
+- **SQL Server**: Primary database engine (can be swapped for any EF Core-supported DB).
+- **Mapster**: Object mapping between entities and DTOs.
+- **Swagger (Swashbuckle)**: API documentation and testing UI.
+- **Serilog / Microsoft.Extensions.Logging**: Structured logging and diagnostics.
+- **Dependency Injection**: Built-in .NET Core DI for service management.
+- **C# 13**: Latest C# language features.
+
+---
+
+## Design Patterns Used
+
+- **Repository Pattern**: Abstracts data access logic and provides a clean interface for data operations.
+- **Unit of Work Pattern**: Manages transactions and coordinates the work of multiple repositories.
+- **DTO (Data Transfer Object) Pattern**: Used for transferring data between layers, especially for API responses.
+- **Dependency Injection**: Promotes loose coupling and easier testing by injecting dependencies.
+- **Layered Architecture**: Separates concerns into API, Core, and Data Access layers for maintainability and scalability.
+
+---
+
 
 ## Entities
 
